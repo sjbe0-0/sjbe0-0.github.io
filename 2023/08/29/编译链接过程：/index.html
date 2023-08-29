@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="C++学习C语言的两大重点：&amp; 和 const引用的作用就是给一个空间取上多个名字，对这些名字进行操作，都可以改变该空间的内容 1.引用没有空引用 2.引用必须初始化 3.没有引用的引用，引用不分级 123456int main()&amp;#123;    int a&#x3D;10;    int &amp;b&#x3D;a;    const int&amp; c&#x3D;a;&#x2F;&#x2F;不能通过c改变a的值&amp;#125;  常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%9A/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C++学习C语言的两大重点：&amp; 和 const引用的作用就是给一个空间取上多个名字，对这些名字进行操作，都可以改变该空间的内容 1.引用没有空引用 2.引用必须初始化 3.没有引用的引用，引用不分级 123456int main()&amp;#123;    int a&#x3D;10;    int &amp;b&#x3D;a;    const int&amp; c&#x3D;a;&#x2F;&#x2F;不能通过c改变a的值&amp;#125;  常">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105143831696.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105172552756.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105173012394.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105173047648.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105174458553.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105174904632.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105175140644.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105183145090.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194025717.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194047039.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106205310128.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194551101.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106201315875.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106201504199.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220107104247189.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106205818465.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106213248907.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106214928095.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220121131558840.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164455700.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164723124.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164850510.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164930972.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304165055611.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304170040553.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304171106896.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220308210417709.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220307203539603.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220307203613672.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318142814716.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318143135084.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318160528489.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318174334373.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318180040018.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220125163515762.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320203758279.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320204105125.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320210658640.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320221524821.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220325090259378.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220325121230688.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118170746439.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118172255332.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118173741604.png">
+<meta property="article:published_time" content="2023-08-29T13:11:36.966Z">
+<meta property="article:modified_time" content="2022-06-25T09:14:01.359Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105143831696.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-编译链接过程：" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%9A/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:36.966Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="C-学习"><a href="#C-学习" class="headerlink" title="C++学习"></a>C++学习</h1><h2 id="C语言的两大重点：-和-const"><a href="#C语言的两大重点：-和-const" class="headerlink" title="C语言的两大重点：&amp; 和 const"></a><strong>C语言的两大重点：&amp; 和 const</strong></h2><p><strong>引用的作用就是给一个空间取上多个名字，对这些名字进行操作，都可以改变该空间的内容</strong></p>
+<p><strong>1.引用没有空引用</strong></p>
+<p><strong>2.引用必须初始化</strong></p>
+<p><strong>3.没有引用的引用</strong>，<strong>引用不分级</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> &amp;b=a;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>&amp; c=a;<span class="comment">//不能通过c改变a的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常引用：不能通过常引用改变所引用的空间"><a href="#常引用：不能通过常引用改变所引用的空间" class="headerlink" title="常引用：不能通过常引用改变所引用的空间"></a>常引用：不能通过常引用改变所引用的空间</h3><p><strong>引用也不能引用一个常变量，更不能引用一个常量</strong></p>
+<p>在编译器编译时总是在向能力收缩的方向编译的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Swap</span><span class="params">(<span class="type">int</span> &amp;a,<span class="type">int</span> &amp;b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> tmp=a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">10</span>,y=<span class="number">20</span>;</span><br><span class="line">    Swap(x,y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="inline函数（内联函数）：解决的是一些小的函数被反复调用而占用了大量的堆栈空间的问题。"><a href="#inline函数（内联函数）：解决的是一些小的函数被反复调用而占用了大量的堆栈空间的问题。" class="headerlink" title="inline函数（内联函数）：解决的是一些小的函数被反复调用而占用了大量的堆栈空间的问题。"></a>inline函数（内联函数）：解决的是一些小的函数被反复调用而占用了大量的堆栈空间的问题。</h2><p><strong>内联的处理方法是再函数的调用点处直接展开函数</strong>。在计算机系统中，频繁的调用会增加时间开销，内联函数的引入减少了函数调用过程中开栈和清栈的开销。</p>
+<h2 id="默认值：在函数定义的时候直接给参数进行赋值"><a href="#默认值：在函数定义的时候直接给参数进行赋值" class="headerlink" title="默认值：在函数定义的时候直接给参数进行赋值"></a>默认值：在函数定义的时候直接给参数进行赋值</h2><p><strong>默认值只能从右往左进行赋值</strong></p>
+<p><strong>默认值是在编译的时候被定义的，当发现函数没有给予实参时，编译器就会将默认值入栈</strong></p>
+<p><strong>调用函数的时候，参数是从右向左结合的</strong></p>
+<h2 id="函数的重载："><a href="#函数的重载：" class="headerlink" title="函数的重载："></a>函数的重载：</h2><p>C语言区分函数依靠函数名，C++区分函数通过函数原型（包括函数名，参数列表，函数的返回类型）</p>
+<p>extern：外部关键字</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105143831696.png" alt="image-20220105143831696"></p>
+<p><strong>为什么C++可以进行重载</strong>：因为C++编译的时候会进行重命名。使用了函数名称的粉碎技术，将返回类型，参数类型作为函数名的一部分。</p>
+<p><strong>调用约定：</strong></p>
+<p><strong>模板函数：   (在   <em>编译</em>   的时候直接识别参数类型，并在编译的时候进行重命名)<strong>模板是产生代码的代码，是在</strong>编译</strong>的时候生成代码。根据名字粉碎技术，进行不同类型的函数生成。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//tmmplate&lt;typename Type&gt;</span><br><span class="line">template&lt;class Type&gt;</span><br><span class="line">void Swap(Type&amp; a,Type&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    Type tmp=a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105172552756.png" alt="image-20220105172552756"></p>
+<p>由上图可知，在程序编译的的时候会进行程序的推演。注意：<strong>模板不是宏的替换</strong>，而是名的重定义。</p>
+<h2 id="new和malloc的区别："><a href="#new和malloc的区别：" class="headerlink" title="new和malloc的区别："></a>new和malloc的区别：</h2><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105173012394.png" alt="image-20220105173012394"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105173047648.png" alt="image-20220105173047648"></p>
+<p>两者的区别是最基本的是，当malloc申请失败的时候，会给申请的对象置为空，但是new只会抛出异常，没有机会进行赋值为空。</p>
+<p><strong>注意:new一个对象，就要delete一个对象，new ip&#x3D;new int[]; 就要delete[] ip</strong></p>
+<h6 id="命名空间：解决全局变量名污染的问题，既重复命名的问题"><a href="#命名空间：解决全局变量名污染的问题，既重复命名的问题" class="headerlink" title="命名空间：解决全局变量名污染的问题，既重复命名的问题"></a>命名空间：解决全局变量名污染的问题，既重复命名的问题</h6><h2 id="面向对象（从现实世界向计算机世界的映射）"><a href="#面向对象（从现实世界向计算机世界的映射）" class="headerlink" title="面向对象（从现实世界向计算机世界的映射）"></a>面向对象（从现实世界向计算机世界的映射）</h2><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105174458553.png" alt="image-20220105174458553"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105174904632.png" alt="image-20220105174904632"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105175140644.png" alt="image-20220105175140644"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220105183145090.png" alt="image-20220105183145090"></p>
+<h3 id="对象的构成：每一个对象都有属性，但是方法是共享的。"><a href="#对象的构成：每一个对象都有属性，但是方法是共享的。" class="headerlink" title="对象的构成：每一个对象都有属性，但是方法是共享的。"></a>对象的构成：每一个对象都有属性，但是方法是共享的。</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194025717.png" alt="image-20220106194025717"></p>
+<p>​    在方案一的实现下，为每一个对象都分配了所有的属性和方法，非常的占用空间，但是不同的对象之间除了属性不同之外，其方法都是相同的，所以这样会浪费大量的空间去存储相同的内容。所以方案一相对来说实不可取的。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194047039.png" alt="image-20220106194047039"></p>
+<p>​    方案二，为每个对象都分配储存空间，但是只存储对象的属性，对象的方法放在公共代码区。但是这样就会出现一个问题，方法如何知道自己处理的是哪个对象？这就要在编译的时候下功夫了，在编译的时候，编译器会对类型进行改写分为以下三步：</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106205310128.png" alt="image-20220106205310128"></p>
+<p>编译器会为每个对象第一个参数，即为*this指向要处理的对象。</p>
+<h3 id="编译器对类型的编译"><a href="#编译器对类型的编译" class="headerlink" title="编译器对类型的编译"></a>编译器对类型的编译</h3><p>step1、识别并找到属性成员，然后放到描述表里面</p>
+<p>step2、开始对类里面的<strong>函数声明（函数原型）</strong>进行识别</p>
+<p>step3、改写：函数的形参</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106194551101.png" alt="image-20220106194551101"></p>
+<h3 id="什么是常方法：float-GetTotal-value（）-const；"><a href="#什么是常方法：float-GetTotal-value（）-const；" class="headerlink" title="什么是常方法：float GetTotal_value（） const；"></a>什么是常方法：float GetTotal_value（） const；</h3><p>改写之后：<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106201315875.png" alt="image-20220106201315875"></p>
+<p>常方法只能对对象的属性进行读取，但是不能够进行改写。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106201504199.png" alt="image-20220106201504199"></p>
+<h3 id="常对象只能调用常方法：编译器编译的时候是朝着能力收缩的方向进行的"><a href="#常对象只能调用常方法：编译器编译的时候是朝着能力收缩的方向进行的" class="headerlink" title="常对象只能调用常方法：编译器编译的时候是朝着能力收缩的方向进行的"></a>常对象只能调用常方法：编译器编译的时候是朝着能力收缩的方向进行的</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220107104247189.png" alt="image-20220107104247189"></p>
+<h3 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106205818465.png" alt="image-20220106205818465"></p>
+<p><strong>有空间不一定有对象</strong></p>
+<p><em><strong>生可带来而死不带去</strong>的对象：对象在被创建的时候会自动申请一个空间，但是在释放之后却不能带走空间。</em></p>
+<h5 id="为什么空类的大小是1，不是0？：C语言有空间即可操作，但是有空间不一定有对象，所以有对象一定要有空间，"><a href="#为什么空类的大小是1，不是0？：C语言有空间即可操作，但是有空间不一定有对象，所以有对象一定要有空间，" class="headerlink" title="为什么空类的大小是1，不是0？：C语言有空间即可操作，但是有空间不一定有对象，所以有对象一定要有空间，"></a>为什么空类的大小是1，不是0？：C语言有空间即可操作，但是<strong>有空间不一定有对象</strong>，所以有对象一定要有空间，</h5><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106213248907.png" alt="image-20220106213248907"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220106214928095.png" alt="image-20220106214928095"></p>
+<p><strong>C++中将常变量当做常量来看，在编译的时候会直接进行替换。</strong></p>
+<p>不允许对局部变量以引用的形式进行返回。</p>
+<p>当变量的生存期不受函数影响的时候可以通过引用进行返回。</p>
+<p>为什么在等号运算符重载的时候不能使用列表赋值，因为使用列表赋值会再次构建一个对象，存在重复构建的现象，因此不可使用列表赋值。</p>
+<p>当我们不想要其他的函数使用拷贝构造函数的时候，我们可以将拷贝构造函数值为private的，并删除掉函数体，或者将函数声明变成如下形式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seqLsit(<span class="type">const</span> SeqlISt* Seq)=delete</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果将构造函数置为私有，我们应该如何构造对象？</strong></p>
+<p>一般情况下不要将析构函数设置为私有函数。</p>
+<h4 id="输出运算符的重载："><a href="#输出运算符的重载：" class="headerlink" title="输出运算符的重载："></a>输出运算符的重载：</h4><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220121131558840.png" alt="image-20220121131558840"></p>
+<p> 如果不希望实参来修改形参，我们可以将拷贝构造函数设置为私有，或者将拷贝构造函数删掉。如果使用引用来声明形参，就不要拷贝构造对象，那么拷贝构造函数是公有还是私有的都没有关系了。</p>
+<p>全局函数不能声明为常方法，因为全局函数没有this指针。</p>
+<p>静态成员变量不能在列表中初始化，只能在类外初始化。</p>
+<p>类内声明的静态成员，是所有的类共享的成员。静态成员不占用类内空间，计算对象大小时，不计算静态成员的大小。                                                                                                                     </p>
+<p>对静态成员的访问没有this指针</p>
+<p>静态成员函数没有this指针，只能访问静态成员，不能访问非静态成员</p>
+<h3 id="左值、右值、将亡值"><a href="#左值、右值、将亡值" class="headerlink" title="左值、右值、将亡值"></a>左值、右值、将亡值</h3><h5 id="以值的形式返回，会在栈中创建一个-临时对象来接受函数的返回值"><a href="#以值的形式返回，会在栈中创建一个-临时对象来接受函数的返回值" class="headerlink" title="以值的形式返回，会在栈中创建一个 临时对象来接受函数的返回值"></a>以值的形式返回，会在栈中创建一个 临时对象来接受函数的返回值</h5><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164455700.png" alt="image-20220304164455700"></p>
+<h5 id="以引用的形式返回，底层是返回对象的地址，但是我们不能反回一个临时对象的地址，临时对象是一个不具名对象，也就是一个右值"><a href="#以引用的形式返回，底层是返回对象的地址，但是我们不能反回一个临时对象的地址，临时对象是一个不具名对象，也就是一个右值" class="headerlink" title="以引用的形式返回，底层是返回对象的地址，但是我们不能反回一个临时对象的地址，临时对象是一个不具名对象，也就是一个右值"></a>以引用的形式返回，底层是返回对象的地址，但是我们不能反回一个临时对象的地址，临时对象是一个不具名对象，也就是一个右值</h5><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164723124.png" alt="image-20220304164723124"></p>
+<h6 id="左值引用只能引用具有名字的对象，右值引用只能引用无名的对象。"><a href="#左值引用只能引用具有名字的对象，右值引用只能引用无名的对象。" class="headerlink" title="左值引用只能引用具有名字的对象，右值引用只能引用无名的对象。"></a>左值引用只能引用具有名字的对象，右值引用只能引用无名的对象。</h6><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164850510.png" alt="image-20220304164850510"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304164930972.png" alt="image-20220304164930972"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304165055611.png" alt="image-20220304165055611"></p>
+<p>左值有地址，右值不能够取地址。</p>
+<h5 id="什么时候右值变成了左值？"><a href="#什么时候右值变成了左值？" class="headerlink" title="什么时候右值变成了左值？"></a>什么时候右值变成了左值？</h5><p>当右值对象有名字的时候，右值就变成了左值，因为此时右值对象有地址</p>
+<h3 id="将亡值"><a href="#将亡值" class="headerlink" title="将亡值"></a>将亡值</h3><h6 id="在表达式的运行过程中产生的不具有名字的对象（可能是自定义类型，也可能是内置类型），这样的对象叫做将亡值；将亡值的生存周期仅限于表达式的运行过程中，表达式执行完毕，将亡值的生存期结束。"><a href="#在表达式的运行过程中产生的不具有名字的对象（可能是自定义类型，也可能是内置类型），这样的对象叫做将亡值；将亡值的生存周期仅限于表达式的运行过程中，表达式执行完毕，将亡值的生存期结束。" class="headerlink" title="在表达式的运行过程中产生的不具有名字的对象（可能是自定义类型，也可能是内置类型），这样的对象叫做将亡值；将亡值的生存周期仅限于表达式的运行过程中，表达式执行完毕，将亡值的生存期结束。"></a>在表达式的运行过程中产生的<strong>不具有名字</strong>的对象（可能是自定义类型，也可能是内置类型），这样的对象叫做将亡值；将亡值的生存周期仅限于表达式的运行过程中，表达式执行完毕，将亡值的生存期结束。</h6><p>在程序的运行过程中不能以引用的形式返回一个局部对象，因为</p>
+<h3 id="移动构造和移动赋值"><a href="#移动构造和移动赋值" class="headerlink" title="移动构造和移动赋值"></a>移动构造和移动赋值</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304170040553.png" alt="image-20220304170040553"></p>
+<p><strong>使用移动构造和移动赋值，我们可减少对于堆区内存构造释放的次数</strong>。如果我们没有写移动构造，会优先调用普通构造，如果写了移动构造，就会优先调用 移动构造。当我们使用函数返回对象的时候，会构造临时对象，然后将临时对象返回进行赋值，使用移动构造会方便很多。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220304171106896.png" alt="image-20220304171106896"></p>
+<h3 id="写时拷贝"><a href="#写时拷贝" class="headerlink" title="写时拷贝"></a>写时拷贝</h3><h3 id="柔性数组"><a href="#柔性数组" class="headerlink" title="柔性数组"></a>柔性数组</h3><h4 id="使用柔性数组构建String类型"><a href="#使用柔性数组构建String类型" class="headerlink" title="使用柔性数组构建String类型"></a>使用柔性数组构建String类型</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">private:</span><br><span class="line"></span><br><span class="line">    <span class="comment">//柔性数组</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StrNode</span></span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line">        <span class="type">int</span> ref;</span><br><span class="line">        <span class="type">int</span> len;</span><br><span class="line">        <span class="type">int</span> size;</span><br><span class="line">        <span class="type">char</span> data[];</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    StrNode* Pstr;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    String(<span class="type">const</span> <span class="type">char</span>* p = <span class="literal">NULL</span>) :Pstr(<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> len = <span class="built_in">strlen</span>(p);</span><br><span class="line">            Pstr = (StrNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(StrNode) + len * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">            Pstr-&gt;ref = <span class="number">1</span>;</span><br><span class="line">            Pstr-&gt;len = len;</span><br><span class="line">            Pstr-&gt;size = len * <span class="number">2</span>;</span><br><span class="line">            <span class="built_in">strcpy</span>(Pstr-&gt;data, p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String(<span class="type">const</span> String&amp; s) :Pstr(<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.Pstr != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Pstr = s.Pstr;</span><br><span class="line">            Pstr-&gt;ref += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~String()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Pstr-&gt;ref == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            delete[] Pstr-&gt;data;</span><br><span class="line">            Pstr = <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            Pstr-&gt;ref--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>使用柔性数组构建String （当然可能还可以构建其他类型，还未探索，使用字符串的应该都可以），</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220308210417709.png" alt="image-20220308210417709"></p>
+<h3 id="友元函数（友元函数破坏了函数的封装性）"><a href="#友元函数（友元函数破坏了函数的封装性）" class="headerlink" title="友元函数（友元函数破坏了函数的封装性）"></a>友元函数（友元函数破坏了函数的封装性）</h3><p>1.不具有自反性（A是B的友元，B不一定是A的友元）</p>
+<p>2.不具有传递性（A是B的友源，B是C的友源，A和C没有关系）</p>
+<p>3.不具有继承性（）</p>
+<h4 id="将外部函数声明为类的友元函数，就可以通过友元函数访问类的私有成员"><a href="#将外部函数声明为类的友元函数，就可以通过友元函数访问类的私有成员" class="headerlink" title="将外部函数声明为类的友元函数，就可以通过友元函数访问类的私有成员"></a>将外部函数声明为类的友元函数，就可以通过友元函数访问类的私有成员</h4><h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><p>类的静态成员只能在类外进行初始化，所有对象共用同一个静态成员</p>
+<p>一般将静态成员设置为私有</p>
+<p>因为静态成员不依赖于对象，所以不能在类中访问静态成员变量</p>
+<p>静态成员变量不属于任何一个对象，所有的对象共用同一个静态成员变量</p>
+<h4 id="当局部函数包含静态成员时，编译器在编译的时候就会将静态成员变量的定义提出来，直接在数据区给其赋值。"><a href="#当局部函数包含静态成员时，编译器在编译的时候就会将静态成员变量的定义提出来，直接在数据区给其赋值。" class="headerlink" title="当局部函数包含静态成员时，编译器在编译的时候就会将静态成员变量的定义提出来，直接在数据区给其赋值。"></a>当局部函数包含静态成员时，编译器在编译的时候就会将静态成员变量的定义提出来，直接在数据区给其赋值。</h4><p>拿常量初始化静态变量和拿变量初始化静态变量，在底层的实现上是不同的，那常量初始化时，在编译期就会将静态成员进行初始化；拿变量对静态变量初始化 时，在编译期编译器会为静态成员在数据区开辟一块空间并设有一个标志位，当标志位为0时可以进行初始化并将标志位置为1，当标志位为1时就不可以进行初始化了。<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220307203539603.png" alt="image-20220307203539603"><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220307203613672.png" alt="image-20220307203613672"></p>
+<h3 id="静态函数"><a href="#静态函数" class="headerlink" title="静态函数"></a>静态函数</h3><h4 id="静态函数能否访问静态成员？"><a href="#静态函数能否访问静态成员？" class="headerlink" title="静态函数能否访问静态成员？"></a>静态函数能否访问静态成员？</h4><p>静态成员函数由于没有this指针，<strong>所以他只能访问静态成员，不能访问非静态成员</strong></p>
+<h4 id="如果非要用静态成员函数访问非静态成员怎么办？"><a href="#如果非要用静态成员函数访问非静态成员怎么办？" class="headerlink" title="如果非要用静态成员函数访问非静态成员怎么办？"></a>如果非要用静态成员函数访问非静态成员怎么办？</h4><p>将非静态成员变量当做参数传入静态成员函数，就可以通过静态成员函数访问非静态成员变量了‘</p>
+<h5 id="静态函数可以通过类名直接访问，也可以通过对象名进行访问"><a href="#静态函数可以通过类名直接访问，也可以通过对象名进行访问" class="headerlink" title="静态函数可以通过类名直接访问，也可以通过对象名进行访问"></a>静态函数可以通过类名直接访问，也可以通过对象名进行访问</h5><h5 id="不具有this指针的方法，都不能定义为常方法。"><a href="#不具有this指针的方法，都不能定义为常方法。" class="headerlink" title="不具有this指针的方法，都不能定义为常方法。"></a>不具有this指针的方法，都不能定义为常方法。</h5><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">private：</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="type">static</span> Object instance;</span><br><span class="line">public:</span><br><span class="line">    Object(<span class="type">int</span> num = <span class="number">0</span>):value(num);</span><br><span class="line">    Object(<span class="type">const</span> Object&amp; obj) = delete;</span><br><span class="line">    Object&amp; operator=(<span class="type">const</span> Object&amp; obj) = delete;</span><br><span class="line"></span><br><span class="line">    Object&amp; <span class="title function_">GteInstance</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> insttance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Object <span class="title function_">Object::instance</span><span class="params">(<span class="number">10</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">funa</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Object&amp; obja = Object::Getinstance();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;&amp;obja&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">funb</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Object&amp; obja = Object::GetInstance();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;&amp;objb&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    thread <span class="title function_">thra</span><span class="params">(funa)</span>;</span><br><span class="line">    thread <span class="title function_">thrb</span><span class="params">(funb)</span>;</span><br><span class="line">    thra.join();</span><br><span class="line">    thrb.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在什么时候要用到这个单例模式：当我们的系统只允许建立一个对象的的时候就需要用到单例模式；"><a href="#在什么时候要用到这个单例模式：当我们的系统只允许建立一个对象的的时候就需要用到单例模式；" class="headerlink" title="在什么时候要用到这个单例模式：当我们的系统只允许建立一个对象的的时候就需要用到单例模式；"></a>在什么时候要用到这个单例模式：当我们的系统只允许建立一个对象的的时候就需要用到单例模式；</h4><h3 id="模板函数"><a href="#模板函数" class="headerlink" title="模板函数"></a>模板函数</h3><p><strong>模板实参推演在编译时期</strong></p>
+<p><strong>类模板中的函数都是模板函数，这些模板函数被调用的时候才会被实例化</strong></p>
+<p>类型萃取的时候，我们的函数必须是public的</p>
+<h3 id="常方法和普通方法"><a href="#常方法和普通方法" class="headerlink" title="常方法和普通方法"></a>常方法和普通方法</h3><p>当普通方法中，有对函数成员的改动，那么我们的常方法就不能调用普通方法。因为我们的常方法中，this指针是不可改的，但是当我们要调用普通方法的时候，要对this指针进行改变，这是不被允许的，所以，<strong>是不可以用常方法调用普通方法的</strong>。</p>
+<p><strong>常思考：每一个函数存在的意义在哪儿？</strong></p>
+<h3 id="继承和面向对象"><a href="#继承和面向对象" class="headerlink" title="继承和面向对象"></a>继承和面向对象</h3><p>继承机制是面向对象是代码可以复用的重要手段。体现了由简单到复杂的认识过程。</p>
+<p>多态性是考虑在不同层次的类中，以及在同一类中，同名的成员函数之间的关系问题。<strong>函数的重载，运算符的重载，属于编译时的多态性。</strong>以虚函数为基础的运行时的多态性是面向对象的程序设计的标志性特征。体现了类推和比喻的思想方法。</p>
+<h5 id="早期绑定（函数的重载，运算符的重载）：在编译时期就确定了调用关系，就是早期绑定。"><a href="#早期绑定（函数的重载，运算符的重载）：在编译时期就确定了调用关系，就是早期绑定。" class="headerlink" title="早期绑定（函数的重载，运算符的重载）：在编译时期就确定了调用关系，就是早期绑定。"></a>早期绑定（函数的重载，运算符的重载）：在编译时期就确定了调用关系，就是早期绑定。</h5><h5 id="晚绑定（以虚函数为基础的运行时多态）：在程序运行时期才能确定函数的调用关系。"><a href="#晚绑定（以虚函数为基础的运行时多态）：在程序运行时期才能确定函数的调用关系。" class="headerlink" title="晚绑定（以虚函数为基础的运行时多态）：在程序运行时期才能确定函数的调用关系。"></a>晚绑定（以虚函数为基础的运行时多态）：在程序运行时期才能确定函数的调用关系。</h5><p>struct是一个数据的集合，class是一个对象的抽象；struct默认为公有，class默认为私有。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span>:</span> A&#123;&#125;;<span class="comment">//此时为公有继承</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span>:</span>A&#123;&#125;;<span class="comment">//此时是公有继承</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span>A&#123;&#125;:<span class="comment">//此时默认为私有</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>：<span class="title">A</span>&#123;</span>&#125;;<span class="comment">//此时默认为私有</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">总结：当我们的派生类为class声明时，无论基类是struct声明还是class声明，都缺省为私有继承；当我们的派生类为struct声明时，无论基类是struct声明还是class声明，都缺省为公有继承</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>在继承关系中，当使用派生类构建对象时，应该先构建基类对象；当析构派生生类对象是，也是先析构派生类对象再析构基类对象。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318142814716.png" alt="image-20220318142814716"></p>
+<p>上图base对象其实有三个成员，除了它本身的sum和fib之外还有一个隐藏的父对象。这种关系是在运行的时候才被确定的，所以属于运行时多态。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318143135084.png" alt="image-20220318143135084"></p>
+<p>在继承关系中，保护属性被看做公有，派生类<strong>不可以</strong>访问基类的<strong>私有成员</strong>，可以访问保护和共有成员。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318160528489.png" alt="image-20220318160528489"></p>
+<p>在看待继承这个问题的上，<strong>我们可以在编译时期假设在派生类中的继承就是给派生类设置一个隐藏基类对象****（实际上这个过程是发生在程序的运行期间，但是为了便于理解我们先这么理解），</strong>私有继承的情况下，赋予派生类的就是一个私有的隐藏父对象，我们的派生类依旧可以访问基类对象的成员（除了私有成员），这与公有、私有还是保护继承是没有关系的。**</p>
+<p><strong>总结：无论任何继承关系，我们子类对象中的方法可以访问隐藏父对象中的保护和公有属性。</strong></p>
+<p>当我们在派生类当中，声明了一个基类的有名对象之后，此<strong>有名对象</strong>和继承来的<strong>隐藏父对象</strong>（无名对象）两者是有一定区别的，在编译过程中，我们的派生类的成员函数可以访问无名对象的除私有成员外的所有成员，但是派生类的成员函数却只能访问<strong>有名基类对象</strong>的公有成员。<strong>二者的差别主要处在protected上</strong></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318174334373.png" alt="image-20220318174334373"></p>
+<p>在上面的代码中，aa是一个公有地基类对象，此时我们的派生类的成员方法是可以访问aa的保护和公有成员，但是main是一个外部函数，所以在main函数中，我们不可以通过b对象来访问b.aa.ay(其是一个基类的保护成员）</p>
+<p><strong>这里我们要弄清楚的一点是，外部函数只能访问对象的公有成员，不能访问<em>保护和私有成员</em>。</strong></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220318180040018.png" alt="image-20220318180040018"></p>
+<p>当我们的派生类的成员变量和基类的成员变量同名时，会发生同名隐藏，采取就近原则，那个离得近就适用男一个。——-&gt;<strong>同名隐藏</strong></p>
+<p>当我们的派生类的成员函数和基类的成员函数同名时，我们通过派生类对象直接访问的函数是派生类自己的，要想访问基类同名的方法，就需要加上积累的作用域。<strong>也是同名隐藏的一种</strong></p>
+<p>公有继承意味着“是一个”；</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220125163515762.png" alt="image-20220125163515762"></p>
+<p> 只能把子给父，不能父给给子</p>
+<h5 id="切片现象："><a href="#切片现象：" class="headerlink" title="切片现象："></a>切片现象：</h5><p>当我们将派生类对象赋值给基类对象的时候，就会发生切片现象，也就是派生对象只会将自己的隐藏父对象的部分赋值给基类对象。这就是切片现象</p>
+<p>构造和析构具有继承性，拷贝构造不具有继承性。</p>
+<h3 id="多态和虚函数"><a href="#多态和虚函数" class="headerlink" title="多态和虚函数"></a>多态和虚函数</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320203758279.png" alt="image-20220320203758279"></p>
+<h5 id="实现运行时多态要满足三个条件："><a href="#实现运行时多态要满足三个条件：" class="headerlink" title="实现运行时多态要满足三个条件："></a>实现运行时多态要满足三个条件：</h5><ol>
+<li><p>类的继承关系为公有继承public，因为公有继承代表是一个的意思</p>
+</li>
+<li><p>使用虚函数，virutal</p>
+</li>
+<li><p>在派生类中，使用指针或者引用调用虚函数才能完成运行时多态</p>
+</li>
+</ol>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320204105125.png" alt="image-20220320204105125"></p>
+<p>不允许在类的声明中不加虚函数关键字，在类的定义中声明虚函数关键字。</p>
+<p><strong>当某个类的成员函数被定义为虚函数时，在这个类的派生类当中都保持虚函数的特征</strong></p>
+<h4 id="设置虚函数的注意事项"><a href="#设置虚函数的注意事项" class="headerlink" title="设置虚函数的注意事项"></a>设置虚函数的注意事项</h4><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320210658640.png" alt="image-20220320210658640"></p>
+<p>当一个类当中有虚函数时，就会产生一个虚函数表，有虚表指针指向他。虚函数表的大小为：</p>
+<p>在一个继承关系当中只有一个虚表指针和一个虚表，在每个不同类型中虚表中的内容不同。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220320221524821.png" alt="image-20220320221524821"></p>
+<h4 id="同名隐藏：发生在编译和链接的过程中"><a href="#同名隐藏：发生在编译和链接的过程中" class="headerlink" title="同名隐藏：发生在编译和链接的过程中"></a>同名隐藏：发生在编译和链接的过程中</h4><p>当我们的派生类在些方法的时候，新的方法和基类方法同名同返回值，但是不同参数列表的时候，我们在编译的时候将基类的同名方法进行隐藏，如果要进行调动，需要在运行的时候进行明确的声名，才能进行准确的调动。</p>
+<p><strong>上述问题告诉我们再写虚函数的时候，一定要保持三同</strong></p>
+<p>刘伟—设计模式</p>
+<p>何为裸指针：直接用类型名声明的指针就是裸指针。裸指针无法判断是指针指向的是单个对象还是一组对象。</p>
+<h3 id="C-中的智能指针"><a href="#C-中的智能指针" class="headerlink" title="C++中的智能指针"></a><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220325090259378.png" alt="image-20220325090259378">C++中的智能指针</h3><h4 id="什么是RAII："><a href="#什么是RAII：" class="headerlink" title="什么是RAII："></a>什么是RAII：</h4><p>使用局部对象来管理资源的技术成为资源获取及初始化；我们有一些资源是操作系统中优先的资源，如内存，套接字，信号量等等，因为我们在使用这些资源的时候往往会为了忘记使用完毕之后进行释放而造成未知的错误。解决这个问题的方法就是：RAII</p>
+<p>利用局部对象调用时产生，调用完毕被销毁的特性去完成RAII。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">public:</span><br><span class="line">    Student(<span class="type">const</span> <span class="built_in">string</span> name = <span class="string">&quot;&quot;</span>, <span class="type">int</span> age = <span class="number">0</span>) :s_name(name), s_age(age)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Init a Studetn!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Student() &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Destory a Studetn!&quot;</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">    <span class="type">const</span> <span class="built_in">string</span>&amp; <span class="title function_">get_name</span><span class="params">()</span><span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> s_name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> <span class="title function_">getage</span><span class="params">()</span> <span class="type">const</span> &#123; <span class="keyword">return</span> s_age; &#125;</span><br><span class="line">private:</span><br><span class="line">    <span class="type">const</span> <span class="built_in">string</span> s_name;</span><br><span class="line">    <span class="type">int</span> s_age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">fun</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Student <span class="title function_">s</span><span class="params">(<span class="string">&quot;zhangsan&quot;</span>)</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    fun();<span class="comment">//要强调的是局部对象的RAII，调用时会产生一个对象，函数调用完毕就会自动销毁</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220325121230688.png" alt="image-20220325121230688"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">namespace qwq</span><br><span class="line">&#123;</span><br><span class="line">    template&lt;<span class="class"><span class="keyword">class</span> _<span class="title">Ty</span>&gt;</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">auto_ptr</span></span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line">        <span class="keyword">typedef</span> _Ty element_type;<span class="comment">//说实话我不知道这句有什么用</span></span><br><span class="line">        <span class="comment">//explicit有效阻止裸指针隐式转换为auto_ptr指针</span></span><br><span class="line">        explicit <span class="title function_">auto_ptr</span><span class="params">(_Ty* _P = <span class="literal">NULL</span>)</span> :_<span class="title function_">Own</span><span class="params">(_P != <span class="literal">NULL</span>)</span>, <span class="title function_">Ptr</span><span class="params">(_P)</span> &#123;&#125;</span><br><span class="line">        <span class="built_in">auto_ptr</span>(<span class="type">const</span> <span class="built_in">auto_ptr</span>&lt;_Ty&gt;&amp; _Y) :_Owns(_Y._Owns), _Ptr(_Y.release()) &#123;&#125;</span><br><span class="line">        <span class="built_in">auto_ptr</span>&lt;_Ty&gt;&amp; operator=(<span class="type">const</span> <span class="built_in">auto_ptr</span>&lt;_Ty&gt;&amp; _Y)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (this != &amp;_Y)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (_Ptr != _Y.get())</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (_Owns)</span><br><span class="line">                    &#123;</span><br><span class="line">                        delete _Ptr;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ~<span class="built_in">auto_ptr</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (_Owns)</span><br><span class="line">            &#123;</span><br><span class="line">                delete _Ptr;</span><br><span class="line">            &#125;</span><br><span class="line">            _Ptr = <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        _Ty&amp; operator*()<span class="type">const</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> (*get());</span><br><span class="line">        &#125;</span><br><span class="line">        _Ty* operator-&gt;()<span class="type">const</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> get();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        _Ty* <span class="title function_">get</span><span class="params">()</span><span class="type">const</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> (_Ptr);</span><br><span class="line">        &#125;</span><br><span class="line">        _Ty* <span class="title function_">release</span><span class="params">()</span><span class="type">const</span></span><br><span class="line">        &#123;</span><br><span class="line">            ((uto_ptr &lt; _Ty) * this)-&gt;_Owns = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span> _Ptr;</span><br><span class="line">        &#125;</span><br><span class="line">    private:</span><br><span class="line">        <span class="type">bool</span> _Owns;</span><br><span class="line">        _Ty* _Ptr;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为一个auto_ptr不能同时拥有两个对象，所以在进行拷贝构造和复制操作的时候要注意对象的所有权问题。</p>
+<p><strong>因为一个auto_ptr被拷贝或者赋值后，已经失去了对象的所有权这个时候，在对auto_ptr的操作就是不安全的，这种操作隐蔽的情形出现在将auto_ptr作为参数按值传递，因为这种情况太隐蔽了，容易出错，所以要避免auto_ptr作为函数参数 按值传递</strong></p>
+<h3 id="编译链接过程："><a href="#编译链接过程：" class="headerlink" title="编译链接过程："></a>编译链接过程：</h3><h4 id="磁盘：永久化储存，I-o慢"><a href="#磁盘：永久化储存，I-o慢" class="headerlink" title="磁盘：永久化储存，I&#x2F;o慢"></a>磁盘：永久化储存，I&#x2F;o慢</h4><h4 id="内存：支持程序运行的真实空间（分为物理内存和虚拟内存）"><a href="#内存：支持程序运行的真实空间（分为物理内存和虚拟内存）" class="headerlink" title="内存：支持程序运行的真实空间（分为物理内存和虚拟内存）"></a>内存：支持程序运行的真实空间（分为物理内存和虚拟内存）</h4><h5 id="物理内存：内存条，I-O快"><a href="#物理内存：内存条，I-O快" class="headerlink" title="物理内存：内存条，I&#x2F;O快"></a>物理内存：内存条，I&#x2F;O快</h5><h5 id="虚拟内存：不是内存—-是磁盘—-交换空间-当物理内存不够用的饿时候，将数据暂且置换到虚拟内存当中"><a href="#虚拟内存：不是内存—-是磁盘—-交换空间-当物理内存不够用的饿时候，将数据暂且置换到虚拟内存当中" class="headerlink" title="虚拟内存：不是内存—-是磁盘—-交换空间-&gt;当物理内存不够用的饿时候，将数据暂且置换到虚拟内存当中"></a>虚拟内存：不是内存—-是磁盘—-交换空间-&gt;当物理内存不够用的饿时候，将数据暂且置换到虚拟内存当中</h5><h4 id="虚拟地址空间：系统逻辑上给到每个进程的执行空间"><a href="#虚拟地址空间：系统逻辑上给到每个进程的执行空间" class="headerlink" title="虚拟地址空间：系统逻辑上给到每个进程的执行空间"></a>虚拟地址空间：系统逻辑上给到每个进程的执行空间</h4><p>​            程序执行的时候，系统会为每一个进程划分一个执行空间（4G）。</p>
+<h4 id="程序执行过程："><a href="#程序执行过程：" class="headerlink" title="程序执行过程："></a>程序执行过程：</h4><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118170746439.png" alt="image-20211118170746439"></p>
+<p>虚拟地址空间的划分：</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118172255332.png" alt="image-20211118172255332"></p>
+<p>.bss 段存储没有初始化或者初始化为0的段</p>
+<p>.data 段存储有初始化或者初始化不为0的段</p>
+<p><strong>虚拟地址空间只是将二进制可执行文件当中相应的段读取到虚拟地址空间当中来，并非是在程序执行的时候才进行划分的</strong></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211118173741604.png" alt="image-20211118173741604"></p>
+<p>二进制可重定位文件中，bss段只用做到向下传递信息。</p>
+<p>​    1.bss 段不进行真实存储，那么如何标记这些数据的存在？</p>
+<p><em><strong>使用符号表进行标记</strong></em></p>
+<p>​    2.bss段的大小为20个字节，但是理论上bss段存储了6个int型数据应该是24个字节，那么还有4个字节去哪儿了？</p>
+<hr>
+<p>符号表会存储符号：</p>
+<p>数据和函数名都会生成符号</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> data；<span class="comment">//没有放在bss段，只是做了COM标记</span></span><br><span class="line">    <span class="comment">//弱符号：没有初始化的非静态数据，弱符号会在链接的过程中被同名的强符号替代</span></span><br></pre></td></tr></table></figure>
+
+<p>指令一旦生成就不会变</p>
+<p>链接之后就没有弱符号了</p>
+<p>虚拟地址空间只是进行逻辑限定，真实储存在内存当中</p>
+<p>虚拟地址空间映射到真实内存上。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%9A/" data-id="cllwbvsb4001kd4mo7bzscaan" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/%E7%AC%94%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

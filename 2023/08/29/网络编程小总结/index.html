@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="#ifndef 和#pragma once有什么区别？摘要： 一、相同点     两者的共同点都是为了避免同一个文件被 include 多次，但是 #ifndef #define #endif 不只有这个作用。 在能够支持这两种方式的编译器上，二者并没有太大的区别，但是两者仍然还是有一些细微的区别。 1.#pragma once    这个是编译器相关，就是说在这个编译系统上能用，在其他编译系统不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%B0%8F%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#ifndef 和#pragma once有什么区别？摘要： 一、相同点     两者的共同点都是为了避免同一个文件被 include 多次，但是 #ifndef #define #endif 不只有这个作用。 在能够支持这两种方式的编译器上，二者并没有太大的区别，但是两者仍然还是有一些细微的区别。 1.#pragma once    这个是编译器相关，就是说在这个编译系统上能用，在其他编译系统不">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220728144322594.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220729173324780.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220801180320829.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220803153026816.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220804124512455.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220804124618107.png">
+<meta property="article:published_time" content="2023-08-29T13:11:37.375Z">
+<meta property="article:modified_time" content="2022-10-14T08:36:23.516Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220728144322594.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-网络编程小总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%B0%8F%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:37.375Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="ifndef-和-pragma-once有什么区别？"><a href="#ifndef-和-pragma-once有什么区别？" class="headerlink" title="#ifndef 和#pragma once有什么区别？"></a>#ifndef 和#pragma once有什么区别？</h2><p><strong>摘要：</strong> 一、相同点     两者的共同点都是为了避免同一个文件被 include 多次，但是 #ifndef #define #endif 不只有这个作用。 在能够支持这两种方式的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%BC%96%E8%AF%91%E5%99%A8&spm=1001.2101.3001.7020">编译器</a>上，二者并没有太大的区别，但是两者仍然还是有一些细微的区别。</p>
+<p><strong>1.#pragma once</strong><br>    这个是编译器相关，就是说在这个编译系统上能用，在其他编译系统不一定行，即移植性差。不过现在基本上已经是每个编译器都有这个定义了。<br>    此方式由编译器保证同一个文件不会被包含多次。注意：这里所说的“同一个文件”是指物理上的一个文件，而不是指内容相同的两个文件。于是不必再费劲想个宏名了，当然也就可以避免宏的名字冲突问题了。 </p>
+<p>缺点：如果某个头文件有多份拷贝，本方法不能保证他们不被重复包含。 </p>
+<p><strong>2.#ifndef #define #endif</strong><br>    该方法与 C++ 语言相关，是 C++ 语言中的宏定义，通过宏定义避免文件多次编译。所以在所有支持 C++ 语言的编译器上都是有效的。如果写的程序要跨平台，最好使用这种方式。该方式由于是 C++ 语言本身支持，所以移植性好。它依赖于宏名字不能冲突，这不光可以保证同一个文件不会被包含多次，也能保证内容完全相同的两个文件不会被不小心同时包含。另外，为了保证不同头文件中的宏名不冲突，故采取类似于_ABC_H_的取名方式。其中，abc.h为当前头文件名。</p>
+<p><strong>总结：</strong>两者都有避免头文件被重复包含的作用，但是#pragma once的移植性更差，且如果某个文件有多份拷贝，#pragma once 不能保证他们不会被重复包含；#ifndef #define #endif 的功能能更强大，他是C++中的宏定义，移植性更好，且也能保证内容完全相同的两个文件不会被不小心同时包含。</p>
+<h4 id="为什么不在文件的的前面声明using-namespace-std-而是要在每一个相对应的对象前加上std-cout"><a href="#为什么不在文件的的前面声明using-namespace-std-而是要在每一个相对应的对象前加上std-cout" class="headerlink" title="为什么不在文件的的前面声明using namespace std;而是要在每一个相对应的对象前加上std::cout."></a>为什么不在文件的的前面声明using namespace std;而是要在每一个相对应的对象前加上std::cout.</h4><p>假如我们一个文件不只一个命名空间，但是多个命名空间中都声明了同一种方法，我们使用不同命名空间中的同名方法时，就难以确定每个方法属于哪个命名空间，造成命名空间的污染。使用后者的优势在于我们可以清楚地知道每个方法来自于哪个命名空间。</p>
+<h4 id="初始化列表的好处是？"><a href="#初始化列表的好处是？" class="headerlink" title="初始化列表的好处是？"></a>初始化列表的好处是？</h4><p>1.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%B1%BB%E6%88%90%E5%91%98&spm=1001.2101.3001.7020">类成员</a>中存在常量，如const int a,只能用初始化不能赋值</p>
+<p>2.类成员中存在引用，同样只能使用初始化不能赋值。</p>
+<p>3.提高效率</p>
+<h4 id="multimap、map和unorder-mao的区别是什么？"><a href="#multimap、map和unorder-mao的区别是什么？" class="headerlink" title="multimap、map和unorder_mao的区别是什么？"></a>multimap、map和unorder_mao的区别是什么？</h4><p>map是STL的一个关联容器，它提供一对一的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=hash&spm=1001.2101.3001.7020">hash</a>。</p>
+<ul>
+<li>第一个可以称为关键字(key)，每个关键字只能在map中出现一次；</li>
+<li>第二个可能称为该关键字的值(value)；</li>
+</ul>
+<p>map以模板(<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%B3%9B%E5%9E%8B&spm=1001.2101.3001.7020">泛型</a>)方式实现，可以存储任意类型的数据，包括使用者自定义的数据类型。</p>
+<p>map的底层是一颗红黑树</p>
+<p>unorder_map的底层是hash表</p>
+<p>multimap和map的功能类似，就不一一介绍了，下面主要说一下这两者的不同：</p>
+<p>1、multimap中的key可以重复</p>
+<p>2、multimap中没有重载operator[ ]功能</p>
+<h5 id="谈谈unordered-map和map的区别"><a href="#谈谈unordered-map和map的区别" class="headerlink" title="谈谈unordered_map和map的区别"></a>谈谈unordered_map和map的区别</h5><h6 id="1、内部实现机理不同："><a href="#1、内部实现机理不同：" class="headerlink" title="1、内部实现机理不同："></a>1、内部实现机理不同：</h6><p><strong>map :map</strong>内部实现了一个<strong>红黑树</strong>（红黑树是非严格平衡二叉搜索树，而AVL是严格平衡二叉搜索树），<strong>红黑树具有自动排序的功能</strong>，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着map的一个元素。因此，对于map进行的查找、删除，添加等一系列的操作都相当于是对红黑树进行的操作。map中的元素是按照二叉搜索树 （又名二叉查找树、二叉排序树–特点就是左子树上所有节点的键值都小于根节点的键值，右子树所有节点的键值都大于根结点的键值）存储的，使用中序遍历可将键值按照从小到大遍历出来。</p>
+<p><strong>unordered_map :unordered_map</strong>内部实现了一个<strong>哈希表</strong> （也叫散列表，通过把关键码值映射到Hash表中一个位置来访问记录，查找的时间复杂度可达到O(1)，其在海量数据处理中有着广泛应用）。因此，其元素的排列顺序都是无序的。哈表的概念见：详谈哈希表。</p>
+<h6 id="2、谈谈各自的优缺点："><a href="#2、谈谈各自的优缺点：" class="headerlink" title="2、谈谈各自的优缺点："></a>2、谈谈各自的优缺点：</h6><p><strong>map</strong><br>1、优点：</p>
+<p>    (1)有序性，这是map结构最大的有点，其元素的有序性在很多应用中都会简化很多的操作。</p>
+<p>    (2)红黑树，内部实现一个红黑树使得map的很多操作在lg（n）的时间复杂度下就可以实现，因此效率非常的高。</p>
+<p>2、缺点：空间占用率高，因为map内部实现了红黑树，虽然提高了运行效率，但是因为每一个节点都需要额外保存父节点、孩子节点和红&#x2F;黑性质，使得每一个节点都占用大量的空间。</p>
+<p>3、适用处：<strong>对于那些有顺序要求的问题，用map会更高效一些。</strong></p>
+<p><strong>unordered_map</strong><br>1、优点：因为内部实现了哈希表，因此其查找速度非常的快。</p>
+<p>2、缺点：哈希表的建立比较耗费时间</p>
+<p>3、适用处：<strong>对于查找问题，unordered_map 会更加高效一些，因此遇到查找问题，常会考虑一下用unordered_map</strong></p>
+<p>3、总结：</p>
+<p>1、内存占有率的问题就转化成红黑树 VS Hash表，还是unorder_map占用的内存要高。</p>
+<p>2、但是unorder_map执行效率要比map高很多</p>
+<p>3、对于unordered_map 或unordered_set 容器，其遍历顺序与创建该容器时输入的顺序不一定相同，因为遍历是按照哈希表从前往后依次遍历的。</p>
+<h4 id="C-有几种类的成员函数？（6）"><a href="#C-有几种类的成员函数？（6）" class="headerlink" title="C++有几种类的成员函数？（6）"></a>C++有几种类的成员函数？（6）</h4><ul>
+<li>一、构造函数（特殊的成员函数）</li>
+<li>二、析构函数（特殊的成员函数）</li>
+<li>三、拷贝构造函数（特殊的成员函数）</li>
+<li>四、赋值运算符重载函数</li>
+<li>五、取地址操作符重载 和 const修饰的取地址操作符重载</li>
+</ul>
+<h4 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h4><h5 id="什么是单例模式？"><a href="#什么是单例模式？" class="headerlink" title="什么是单例模式？"></a>什么是单例模式？</h5><p><strong>单例模式是指在内存中只会创建且仅创建一次对象的设计模式。</strong>在程序中<strong>多次使用同一个对象且作用相同</strong>时，为了防止频繁地创建对象使得内存飙升，单例模式可以让程序仅在内存中<strong>创建一个对象</strong>，让所有需要调用的地方都共享这一单例对象。</p>
+<h5 id="单例模式有两种类型："><a href="#单例模式有两种类型：" class="headerlink" title="单例模式有两种类型："></a>单例模式有两种类型：</h5><ul>
+<li>懒汉式：在<strong>真正需要使用</strong>对象时才去创建该单例类对象</li>
+<li>饿汉式：在<strong>类加载</strong>时已经创建好该单例对象，等待被程序使用</li>
+</ul>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220728144322594.png" alt="image-20220728144322594"></p>
+<h4 id="进程与线程的区别？"><a href="#进程与线程的区别？" class="headerlink" title="进程与线程的区别？"></a>进程与线程的区别？</h4><ol>
+<li><p>定义不一样，进程是执行中的一段程序，而一个进程中执行中的每个任务即为一个线程。</p>
+</li>
+<li><p>一个线程只可以属于一个进程，但一个进程能包含多个线程。</p>
+</li>
+<li><p>线程无地址空间，它包括在进程的地址空间里。</p>
+</li>
+<li><p>线程的开销或代价比进程的小。</p>
+</li>
+</ol>
+<h4 id="并发与并行的区别？"><a href="#并发与并行的区别？" class="headerlink" title="并发与并行的区别？"></a>并发与并行的区别？</h4><p>二者都有“多个线程&#x2F;进程同时执行”的意思：</p>
+<p><strong>但是</strong>：</p>
+<ul>
+<li>并行是指两个或者多个事件在同一时刻发生，而并发是指两个或多个事件在同一时间间隔发生。</li>
+<li>并行是在不同实体上的多个事件，并发是在同一实体上的多个事件。</li>
+</ul>
+<h4 id="通过环境变量设置日志级别-，环境变量是自己设置的，凭什么能代表日志的级别呢？"><a href="#通过环境变量设置日志级别-，环境变量是自己设置的，凭什么能代表日志的级别呢？" class="headerlink" title="通过环境变量设置日志级别 ，环境变量是自己设置的，凭什么能代表日志的级别呢？"></a>通过环境变量设置日志级别 ，环境变量是自己设置的，凭什么能代表日志的级别呢？</h4><p>相当于宏替换，因为在项目当中我们要经常使用日志级别，将其设置在环境变量当中可以及时的进行替换；</p>
+<h4 id="为什么要设置环境变量？"><a href="#为什么要设置环境变量？" class="headerlink" title="为什么要设置环境变量？"></a>为什么要设置环境变量？</h4><p>环境变量一般是指在操作系统中用来指定操作系统运行环境的一些参数，如临时文件夹位置和系统文件夹位置等。</p>
+<p>环境变量是在操作系统中一个具有特定名字的对象，它包含了一个或者多个应用程序所将使用到的信息。例如Windows和DOS操作系统中的path环境变量，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到path中指定的路径去找。用户通过设置环境变量，来更好的运行进程</p>
+<h4 id="为什么要定义那几个宏？"><a href="#为什么要定义那几个宏？" class="headerlink" title="为什么要定义那几个宏？"></a>为什么要定义那几个宏？</h4><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220729173324780.png" alt="image-20220729173324780"></p>
+<h3 id="网络IO的两个阶段"><a href="#网络IO的两个阶段" class="headerlink" title="网络IO的两个阶段"></a>网络IO的两个阶段</h3><p>第一阶段：数据的准备阶段，将网卡上的数据包放到内核上</p>
+<p>第二阶段：数据的拷贝阶段、从内核的缓冲区拷贝到用户空间</p>
+<h4 id="IO演进"><a href="#IO演进" class="headerlink" title="IO演进"></a>IO演进</h4><ul>
+<li><p>阻塞：读到缓冲区，数据没有准备好就一直阻塞着，缺点是占用线程不干事情</p>
+</li>
+<li><p>非阻塞（setnoblack）：当访问内核缓冲区的时候数据没有准备好，立即返回，缺点是空转CPU不停地进行系统调用，产生大量的终端</p>
+</li>
+<li><p>同步</p>
+</li>
+<li><p>异步</p>
+</li>
+</ul>
+<h4 id="IO复用"><a href="#IO复用" class="headerlink" title="IO复用"></a>IO复用</h4><h5 id="select："><a href="#select：" class="headerlink" title="select："></a>select：</h5><ul>
+<li>支持的文件描述符有上限 1024</li>
+<li>用户空间拷贝到内核空间</li>
+<li>内核空间再拷贝到用户空间</li>
+<li>时间复杂度为O(n)</li>
+</ul>
+<h5 id="poll："><a href="#poll：" class="headerlink" title="poll："></a>poll：</h5><ul>
+<li>底层数据结构为链表</li>
+<li>还是要发生两次拷贝</li>
+<li>时间复杂度还是为O(n)</li>
+</ul>
+<h5 id="epoll："><a href="#epoll：" class="headerlink" title="epoll："></a>epoll：</h5><ul>
+<li>红黑树（为什么不用哈希表）：因为我我们知不道哈希表在什么时候会扩容。</li>
+<li><strong>ET</strong>：边沿触发，ET在发现有我们关注的事情发生之后，会立即返回，并且sleep这一事件的epoll_wait，不管该事件有没有结束。</li>
+<li><strong>LT：</strong>电平触发，当发现文件描述符上有我们感性的事件时，触发事件的回调函数，但是当文件描述符上的数据没有读取完毕时，epoll_wait依旧会被使用，直到数据处理完毕</li>
+</ul>
+<h3 id="reactor"><a href="#reactor" class="headerlink" title="reactor:"></a>reactor:</h3><p>将事件和事件的处理方式绑定到一起，达到异步的处理效果。</p>
+<h5 id="服务器端的reactor回调函数该如何写？"><a href="#服务器端的reactor回调函数该如何写？" class="headerlink" title="服务器端的reactor回调函数该如何写？"></a>服务器端的reactor回调函数该如何写？</h5><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220801180320829.png" alt="image-20220801180320829"></p>
+<p>主线程负责监听，当监听到事件之后，进行处理，子线程有两个任务一是处理主线程分发下来的任务，第二是处理cfd上发生的IO事件。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220803153026816.png" alt="image-20220803153026816"></p>
+<p>Redis和mysql的基础架构都是CS架构，在实现项目的过程中，我们是封装一个客户端去访问mysql和Redis的服务器。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220804124512455.png" alt="image-20220804124512455"></p>
+<h4 id="分层文件系统"><a href="#分层文件系统" class="headerlink" title="分层文件系统"></a>分层文件系统</h4><h4 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h4><h4 id="cgroup"><a href="#cgroup" class="headerlink" title="cgroup"></a>cgroup</h4><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220804124618107.png" alt="image-20220804124618107"></p>
+<p>删除容器之前需要先将容器停掉</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%B0%8F%E6%80%BB%E7%BB%93/" data-id="cllwbvsb6001ld4moh4of3ku0" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E5%92%8C%E9%98%BB%E5%A1%9E%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

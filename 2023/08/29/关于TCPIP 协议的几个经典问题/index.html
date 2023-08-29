@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="关于TCP&#x2F;IP 协议的经典问题1. 讲一下TCP三次握手的流程一开始的时候，客户端和服务器都处于CLOSED的状态，然后服务器开始监听某个端口，进入LISTEN状态： ​	三次握手，首先由客户端向服务端发起连接请求，此为第一次握手； ​	然后服务端接收到来自客户端的请求之后，向客户端回复已经收到连接请求了，可以开始连接了，并转为等待连接模式，此为第二次握手； ​	当客户端收到来自服务端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/%E5%85%B3%E4%BA%8ETCPIP%20%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于TCP&#x2F;IP 协议的经典问题1. 讲一下TCP三次握手的流程一开始的时候，客户端和服务器都处于CLOSED的状态，然后服务器开始监听某个端口，进入LISTEN状态： ​	三次握手，首先由客户端向服务端发起连接请求，此为第一次握手； ​	然后服务端接收到来自客户端的请求之后，向客户端回复已经收到连接请求了，可以开始连接了，并转为等待连接模式，此为第二次握手； ​	当客户端收到来自服务端">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-29T13:11:37.049Z">
+<meta property="article:modified_time" content="2022-10-23T04:46:33.007Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-关于TCPIP 协议的几个经典问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/%E5%85%B3%E4%BA%8ETCPIP%20%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:37.049Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="关于TCP-IP-协议的经典问题"><a href="#关于TCP-IP-协议的经典问题" class="headerlink" title="关于TCP&#x2F;IP 协议的经典问题"></a>关于TCP&#x2F;IP 协议的经典问题</h1><h2 id="1-讲一下TCP三次握手的流程"><a href="#1-讲一下TCP三次握手的流程" class="headerlink" title="1. 讲一下TCP三次握手的流程"></a>1. 讲一下TCP三次握手的流程</h2><p>一开始的时候，客户端和服务器都处于CLOSED的状态，然后服务器开始监听某个端口，进入LISTEN状态：</p>
+<p>​	三次握手，首先由客户端向服务端发起连接请求，此为第一次握手；</p>
+<p>​	然后服务端接收到来自客户端的请求之后，向客户端回复已经收到连接请求了，可以开始连接了，并转为等待连接模式，此为第二次握手；</p>
+<p>​	当客户端收到来自服务端的确认码之后，在次向客户端发送确认消息，并开始连接，此为第三次握手；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一次握手（由客户端发出SYN = 1,seq = x）,发送完毕后客户端处于SYN_SEND状态</span><br><span class="line">第二次握手（有服务器发出SYN = 1,ACK = 1,seq = y,ACKnum = x+1）发送完毕后，发送完毕后服务器端进入SYN_RCVD状态</span><br><span class="line">第三次握手（由客户端发出ACK = 1，ACKnum = y+1）发送完毕后客户端进入ESTABLISHED的状态，当服务器端接收到这个包时，也进入ESTABLISHED状态，TCP握手完成，可以开始进行数据传输。</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-TCP握手为什么是三次，不能是两次？也不能是四次？"><a href="#2-TCP握手为什么是三次，不能是两次？也不能是四次？" class="headerlink" title="2. TCP握手为什么是三次，不能是两次？也不能是四次？"></a>2. TCP握手为什么是三次，不能是两次？也不能是四次？</h2><p>三次握手是为了确保连接的成功，客户端和服务端都确认可以被连接然后第三次握手建立连接，如果是两次，那么建立的连接就不是百分百准确的，有可能连接失败；四次的话就有点多余了，既然三次握手已经能够准确的建立连接了，没必要再来一次，浪费时间和空间。</p>
+<h2 id="3-讲一下TCP四次挥手的过程"><a href="#3-讲一下TCP四次挥手的过程" class="headerlink" title="3.讲一下TCP四次挥手的过程"></a>3.讲一下TCP四次挥手的过程</h2><p>初始状态为客户端和服务端处于连接状态，并且数据已经发送完毕，没有要继续发送的数据了，然后客户端要开始断开连接：</p>
+<p>客户端首先要向服务端发送消息，告诉服务器端，我没有要传输的数据了，可以进行断开了，此为第一次挥手；当服务器端收到来自客户端的消息之后，回复客户端他已经知道了，准备好了挥手，此为第二次回收；当发送完消息一段时间之后，服务器端发送消息告诉客户端我已经准备好了，可以进行断开了，此为第三次挥手；当客户端收到消息之后，客户端断开与服务端的连接，此为第四次挥手，至此，客户端和服务端的连接彻底断开；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 第一次挥手(FIN=1，seq=u)，发送完毕后，客户端进入FIN_WAIT_1 状态</span><br><span class="line">2. 第二次挥手(ACK=1，ack=u+1,seq =v)，发送完毕后，服务器端进入CLOSE_WAIT 状态，客户端接收到这个确认包之后，进入 FIN_WAIT_2 状态</span><br><span class="line">3. 第三次挥手(FIN=1，ACK1,seq=w,ack=u+1)，发送完毕后，服务器端进入LAST_ACK 状态，等待来自客户端的最后一个ACK。</span><br><span class="line">4. 第四次挥手(ACK=1，seq=u+1,ack=w+1)，客户端接收到来自服务器端的关闭请求，发送一个确认包，并进入 TIME_WAIT状态，等待了某个固定时间（两个最大段生命周期，2MSL，2 Maximum Segment Lifetime）之后，没有收到服务器端的 ACK ，认为服务器端已经正常关闭连接，于是自己也关闭连接，进入 CLOSED 状态。服务器端接收到这个确认包之后，关闭连接，进入 CLOSED 状态。</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-为什么TCP挥手需要四次呢？"><a href="#4-为什么TCP挥手需要四次呢？" class="headerlink" title="4.为什么TCP挥手需要四次呢？"></a>4.为什么TCP挥手需要四次呢？</h2><p>TCP的四次挥手过程就像两个人在打电话，当A对B说我没什么要说的了，B回复说我知道了；此时B可能还有话对A说，当B说完之后，B告诉A我说完了，你可以挂了，然后再有A来挂断电话。因为TCP通信是双端通信，客户端和服务端都可以向对方发送消息，所以要确定两边都没有数据可发送了之后才能彻底断开连接，因此需要四次挥手；</p>
+<h2 id="5-TIME-WAIT状态为什么需要等待2MSL"><a href="#5-TIME-WAIT状态为什么需要等待2MSL" class="headerlink" title="5.TIME_WAIT状态为什么需要等待2MSL"></a>5.TIME_WAIT状态为什么需要等待2MSL</h2><p>2msl 两个报文的生命周期</p>
+<ol>
+<li>第一个MSL是为了能够保证四次挥手过程中的主动关闭方的ACK报文能够到达对端</li>
+<li>第二个MSL是为了保证对端没收到ACK那么进行重传的FIN能够到达。</li>
+</ol>
+<h2 id="6-TCP和UDP的区别"><a href="#6-TCP和UDP的区别" class="headerlink" title="6.TCP和UDP的区别"></a>6.TCP和UDP的区别</h2><ol>
+<li>TCP是面向链接的（如打电话之前要先拨号），UDP是无连接的，及传递数据之间不需要建立连接；</li>
+<li>TCP要求安全性，提供可靠的服务，通过TCP连接传递的数据不丢失,不重复，安全可靠；但是UDP是尽最大努力交付，既不保障可靠交付；</li>
+<li>TCP是点对点连接，UDP可以是一对一、一对多、多对多都可以；</li>
+<li>TCP的传输效率相对UDP比较低，UDP适合对高速传输和对实时性有要求的通信。</li>
+<li>TCP适合用于网页，邮件等；UDP适合用于视频，语音广播等</li>
+<li>TCP面向字节流，UDP面向报文。</li>
+</ol>
+<h2 id="7-半连接队列和SYN-flood攻击的关系"><a href="#7-半连接队列和SYN-flood攻击的关系" class="headerlink" title="7.半连接队列和SYN flood攻击的关系"></a>7.半连接队列和SYN flood攻击的关系</h2><p>TCP进入三次握手前，服务端会从CLOSED状态变成LISTEN状态，同时在内部创建两个队列：半连接队列（SYN队列和全连接队列（ACCEPT队列）。</p>
+<h4 id="什么是半连接队列："><a href="#什么是半连接队列：" class="headerlink" title="什么是半连接队列："></a>什么是半连接队列：</h4><p>TCP三次握手是，客户端发送SYN到服务端，服务端收到后，便回复SYN和ACK，状态由LISTEN变为SYN_RCVD，此时这个连接就被推入了SYN队列，及半连接队列。</p>
+<h4 id="什么是全连接队列："><a href="#什么是全连接队列：" class="headerlink" title="什么是全连接队列："></a>什么是全连接队列：</h4><p>当客户端回复SCK，服务端接收后，三次握手就完成了。这是链接会等待被具体的应用取走，再被取走之前，它被推入ACCEPT队列，即为全连接队列。</p>
+<p>SYNFlood是一种典型的DOS（Denial of Service拒绝服务）攻击，她在短时间内，伪造不存在的IP地址，向服务器大量发起SYN报文，当服务器回复SYN+ACK报文后，不会受到ACK会议康报文，导致服务器上建立了当量的半连接，半连接队列被挤占满了就无法处理正产的TCP请求了。</p>
+<h2 id="8-TCP的粘包和拆包"><a href="#8-TCP的粘包和拆包" class="headerlink" title="8.TCP的粘包和拆包"></a>8.TCP的粘包和拆包</h2><p>TCP是面向流，没有界限的一串数据。TCP底层并不了解上层业务数据的具体含义，它会根据TCP缓冲区的实际情况进行包的划分，所以在业务上认为，一个完整的包可能会被TCP拆分成多个包进行发送，也有可能把多个小的包封装成一个大的数据包进行发送，这就是所谓的TCP粘包和拆包问题。</p>
+<h4 id="为什么会产生粘包和拆包问题？"><a href="#为什么会产生粘包和拆包问题？" class="headerlink" title="为什么会产生粘包和拆包问题？"></a>为什么会产生粘包和拆包问题？</h4><ul>
+<li>要发送的数据小于TCP发送缓冲区的大小，TCP将多次写入缓冲区的数据一次发送出去，将会产生粘包；</li>
+<li>接受数据段的应用层没有及时读取接收缓冲区中的数据，将发生粘包；</li>
+<li>要发送的数据大于TCP发送缓冲区剩余空间的大小，将会发生拆包；</li>
+<li>待发送数据大于MSS（最大报文长度），TCP在传输前将进行拆包。及TCP报文长度-TCP头部长度 &gt;MSS。</li>
+</ul>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>发送端将每个数据包封装成固定长度</li>
+<li>在数据的尾部增加特殊字符进行分割</li>
+<li>讲述分成两部分，一部分是头部一部分是内容体；其中头部结构大小固定，且有一个字段声明内容体的大小。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/%E5%85%B3%E4%BA%8ETCPIP%20%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/" data-id="cllwbvs97000rd4mofq3bf97g" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/%E5%85%B3%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%80%9D%E8%80%83/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/%E9%AB%98%E6%95%88C++%E8%AF%BB%E5%90%8E%E6%84%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

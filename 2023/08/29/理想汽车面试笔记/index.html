@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="给定四个点，求这四个点所围成的图形面积？123int SeekArea(vector&lt;vector&lt;int&gt;&gt;&amp; point)&amp;#123;&amp;#125;   首先想到的是特殊情况，这四个点只是一个点 | 这四个点在同一条直线上  这四个点构成一个三角形 12&#x2F;&#x2F;利用海伦公式求解  这四个点都成一个四边形 12&#x2F;&#x2F;将四边形拆成两个三角形，在利用海伦公式求解  那么解题思">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/%E7%90%86%E6%83%B3%E6%B1%BD%E8%BD%A6%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="给定四个点，求这四个点所围成的图形面积？123int SeekArea(vector&lt;vector&lt;int&gt;&gt;&amp; point)&amp;#123;&amp;#125;   首先想到的是特殊情况，这四个点只是一个点 | 这四个点在同一条直线上  这四个点构成一个三角形 12&#x2F;&#x2F;利用海伦公式求解  这四个点都成一个四边形 12&#x2F;&#x2F;将四边形拆成两个三角形，在利用海伦公式求解  那么解题思">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-29T13:11:37.204Z">
+<meta property="article:modified_time" content="2022-10-13T09:04:00.054Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-理想汽车面试笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/%E7%90%86%E6%83%B3%E6%B1%BD%E8%BD%A6%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:37.204Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="给定四个点，求这四个点所围成的图形面积？"><a href="#给定四个点，求这四个点所围成的图形面积？" class="headerlink" title="给定四个点，求这四个点所围成的图形面积？"></a>给定四个点，求这四个点所围成的图形面积？</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SeekArea</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; point)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>首先想到的是特殊情况，这四个点只是一个点 | 这四个点在同一条直线上</p>
+</li>
+<li><p>这四个点构成一个三角形</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用海伦公式求解</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这四个点都成一个四边形</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//将四边形拆成两个三角形，在利用海伦公式求解</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="那么解题思路就来了，首先我们需要判断这四个点可以构成一个什么样的图形，其次在进行求解；"><a href="#那么解题思路就来了，首先我们需要判断这四个点可以构成一个什么样的图形，其次在进行求解；" class="headerlink" title="那么解题思路就来了，首先我们需要判断这四个点可以构成一个什么样的图形，其次在进行求解；"></a>那么解题思路就来了，首先我们需要判断这四个点可以构成一个什么样的图形，其次在进行求解；</h5><h6 id="那么我们如何进行区分呢？"><a href="#那么我们如何进行区分呢？" class="headerlink" title="那么我们如何进行区分呢？"></a>那么我们如何进行区分呢？</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断四个点在一条直线上,没有围成图形，面积为0，返回-1</span></span><br><span class="line"><span class="keyword">if</span>((point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">0</span>][<span class="number">1</span>] &amp;&amp; point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">0</span>][<span class="number">2</span>] &amp;&amp; point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">0</span>][<span class="number">3</span>])||(point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">1</span>][<span class="number">0</span>] &amp;&amp; point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">2</span>][<span class="number">0</span>] &amp;&amp; point[<span class="number">0</span>][<span class="number">0</span>] == point[<span class="number">3</span>][<span class="number">0</span>]))&#123;<span class="keyword">return</span> <span class="number">-1</span>;&#125;</span><br><span class="line"><span class="comment">//当四个点构成三角形时，利用海伦公式</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>()</span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//剩下的只能是四边形了，拆成两个三角形来做</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>太麻烦了，这里只理清思路，代码不写了。</p>
+<p><em>海伦公式：</em>s&#x3D;sqrt(p*(p-a)(p-b)(p-c))**</p>
+<p>已知两点（x1,y1）,(x2,y2)如何求边长</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">double dis_calculate(vec2d_t *point, vec2d_t *line_point_1, vec2d_t *line_point_2)&#123;</span><br><span class="line">    /*处理斜率不存在的情况*/</span><br><span class="line">    if (line_point_1-&gt;x_ == line_point_2-&gt;x_) &#123;</span><br><span class="line">        return fabs(point-&gt;x_ - line_point_1-&gt;x_);</span><br><span class="line">    &#125;</span><br><span class="line">    double k, b;/*y=kx+b*/</span><br><span class="line">    k = (line_point_2-&gt;y_ - line_point_1-&gt;y_) / (line_point_2-&gt;x_ - line_point_1-&gt;x_);</span><br><span class="line">    b = line_point_2-&gt;y_ - line_point_2-&gt;x_ * k;</span><br><span class="line">    </span><br><span class="line">    double res = fabs(k*point-&gt;x_-point-&gt;y_ + b) / sqrt(k*k+1);</span><br><span class="line"> </span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>指针是不能相加的，因为相加得出的数字毫无意义，但是可以相减，如果两个指针指向一个数组，则相减的结果是两个指针之间元素的数目。</strong></p>
+<h4 id="给定两个string类型的数字，输出它们之和？"><a href="#给定两个string类型的数字，输出它们之和？" class="headerlink" title="给定两个string类型的数字，输出它们之和？"></a>给定两个string类型的数字，输出它们之和？</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">NumToSum</span><span class="params">(string Num1,string Num2)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>刚开始考虑不周全，以为这道题就一般简单，但其实要考虑的比较多，</p>
+<ul>
+<li>首先字符串不是int数据，且没有直接将字符串转换为int数据的API函数，故不能使用直接相加法；</li>
+<li>第二，要考虑字符串的位数不同，在计算的时候要注意</li>
+<li>第三，不能简单地使用str[i]+str[j],因为str[i]是char类型的数据，当进行相加时实际上是ascall码的加法，最后的结果肯定不是想要的结果</li>
+<li>第四，也是非常重要的，要注意进位。</li>
+</ul>
+<h4 id="那么我们的问题来了，应该如何将string的数据转为int型的数据呢？"><a href="#那么我们的问题来了，应该如何将string的数据转为int型的数据呢？" class="headerlink" title="那么我们的问题来了，应该如何将string的数据转为int型的数据呢？"></a>那么我们的问题来了，应该如何将string的数据转为int型的数据呢？</h4><ol>
+<li><h5 id="最简单的方法：使用stoi-函数和to-string-函数进行两次转换！"><a href="#最简单的方法：使用stoi-函数和to-string-函数进行两次转换！" class="headerlink" title="最简单的方法：使用stoi()函数和to_string()函数进行两次转换！"></a>最简单的方法：使用stoi()函数和to_string()函数进行两次转换！</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">    <span class="type">int</span> num =<span class="built_in">stoi</span>(str);</span><br><span class="line">    cout&lt;&lt;num&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//得到的输出结果将会是int型的“123”</span></span><br><span class="line"><span class="comment">//可以通过typeid(stoi(str)).name()查看，转换后的类型名为int</span></span><br><span class="line"><span class="function">string <span class="title">NumToSum</span><span class="params">(string Num1, string Num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> number1 = <span class="built_in">stoi</span>(Num1);</span><br><span class="line">	<span class="type">int</span> number2 = <span class="built_in">stoi</span>(Num2);</span><br><span class="line">	<span class="type">int</span> sum = number1 + number2;</span><br><span class="line">	string ret = <span class="built_in">to_string</span>(sum);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="那么我们在不使用stoi-函数的前提下如何进行两个字符串的相加呢？-自己造一个轮子"><a href="#那么我们在不使用stoi-函数的前提下如何进行两个字符串的相加呢？-自己造一个轮子" class="headerlink" title="那么我们在不使用stoi()函数的前提下如何进行两个字符串的相加呢？ 自己造一个轮子"></a>那么我们在不使用stoi()函数的前提下如何进行两个字符串的相加呢？ 自己造一个轮子</h5><p>当我们使用下标访问string数据的时候，得到的结果是char类型的数据，char 类型的数据转换为int型的数据要么使用atoi()函数，要么利用ascall表进行减str[i]-48得到相应的数字，然后进行相加，<strong>值得注意的是加法有进位</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">NumToSum</span><span class="params">(string Num1, string Num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> size1 = Num1.<span class="built_in">length</span>();</span><br><span class="line">    <span class="type">int</span> size2 = Num2.<span class="built_in">length</span>();</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> carry = <span class="number">0</span>;<span class="comment">//进位</span></span><br><span class="line">    <span class="comment">//声明一个char类型的数组用来存储相加后的结果</span></span><br><span class="line">    vector&lt;<span class="type">char</span>&gt; vec;</span><br><span class="line">    <span class="type">int</span> i = size1 - <span class="number">1</span>, j = size2 - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; i &gt;= <span class="number">0</span>, j &gt;= <span class="number">0</span>; i--, j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sum = (Num1[i] - <span class="number">48</span>) + (Num2[j] - <span class="number">48</span>) + carry;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= <span class="number">10</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            carry = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            carry = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        vec.<span class="built_in">push_back</span>((sum % <span class="number">10</span>)+<span class="number">48</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> sum = (Num1[i--] - <span class="number">48</span>) + carry;</span><br><span class="line">            <span class="keyword">if</span> (sum &gt;= <span class="number">10</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                carry = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                carry = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            vec.<span class="built_in">push_back</span>((sum % <span class="number">10</span>) + <span class="number">48</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (j &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> sum = (Num1[j--] - <span class="number">48</span>) + carry;</span><br><span class="line">            <span class="keyword">if</span> (sum &gt;= <span class="number">10</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                carry = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                carry = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            vec.<span class="built_in">push_back</span>((sum % <span class="number">10</span>) + <span class="number">48</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    string ret;</span><br><span class="line">    <span class="type">int</span> k = vec.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (k &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ret.<span class="built_in">push_back</span>(vec[k--]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序如上，也能得出正确的结果，但是没有进行测试，不知道在极端条件下的情况如何。但是自我感觉这个代码写的真的丑，又丑又长，可读性不强还是使用API接口来的方便。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/%E7%90%86%E6%83%B3%E6%B1%BD%E8%BD%A6%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" data-id="cllwbvsah001ad4mohobc8boa" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/%E4%B9%90%E5%BB%BA%E5%86%9B-219-%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E5%A4%8D%E4%B9%A0%E8%80%83%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

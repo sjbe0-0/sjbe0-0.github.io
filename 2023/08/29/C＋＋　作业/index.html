@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="C＋＋　作业0.const常量1、const常量必须在定义的时候初始化，且不能修改。2、const常量的默认类型为int类型。3、#define是一个预处理器编译指令。该编译指令告诉预处理器，在程序中来查找并替换，修改后的程序将在这些变量的值替换后被编译。#define采用宏代换方式进行常量的处理，不具有类型检查机制，存在不安全性。 1.总结const 与指针的关系 可以看下面的实例：其中p1,p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/C%EF%BC%8B%EF%BC%8B%E3%80%80%E4%BD%9C%E4%B8%9A/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C＋＋　作业0.const常量1、const常量必须在定义的时候初始化，且不能修改。2、const常量的默认类型为int类型。3、#define是一个预处理器编译指令。该编译指令告诉预处理器，在程序中来查找并替换，修改后的程序将在这些变量的值替换后被编译。#define采用宏代换方式进行常量的处理，不具有类型检查机制，存在不安全性。 1.总结const 与指针的关系 可以看下面的实例：其中p1,p">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220107220953636.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220109170152714.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220109174432646.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108165826114.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170231311.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170555066.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170919399.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108171444536.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108171807697.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172103339.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172407250.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172736662.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173543066.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173719692.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173822705.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173952943.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174122580.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174320244.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174609470.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174727461.png">
+<meta property="og:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174845231.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210614192437496.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW5sb25nX2N4eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2023-08-29T13:11:36.286Z">
+<meta property="article:modified_time" content="2022-01-20T04:05:25.828Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220107220953636.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C＋＋　作业" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/C%EF%BC%8B%EF%BC%8B%E3%80%80%E4%BD%9C%E4%B8%9A/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:36.286Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="C＋＋-作业"><a href="#C＋＋-作业" class="headerlink" title="C＋＋　作业"></a>C＋＋　作业</h2><h3 id="0-const常量"><a href="#0-const常量" class="headerlink" title="0.const常量"></a>0.const常量</h3><p>1、const常量必须在定义的时候初始化，且不能修改。<br>2、const常量的默认类型为int类型。<br>3、#define是一个预处理器编译指令。该编译指令告诉预处理器，在程序中来查找并替换，修改后的程序将在这些变量的值替换后被编译。#define采用宏代换方式进行常量的处理，不具有类型检查机制，存在不安全性。</p>
+<h3 id="1-总结const-与指针的关系"><a href="#1-总结const-与指针的关系" class="headerlink" title="1.总结const 与指针的关系"></a>1.总结const 与指针的关系</h3><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220107220953636.png" alt="image-20220107220953636"></p>
+<p>可以看下面的实例：其中p1,p2,p3,p4,p7,p8是正确的，可以编译通过，p5是错误的，p6也是错误的,他们正确与否的原因我都写在了注释中：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b=<span class="number">20</span>;</span><br><span class="line">    <span class="type">int</span>* p1=&amp;a;<span class="comment">//此时p1 是一个普通指针，其指向一个普通变量，是正确的</span></span><br><span class="line">    <span class="type">int</span>*<span class="type">const</span> p2=&amp;a;<span class="comment">//此时的const限制的是p2自身，他只能指向变量a，可以通过*p2改变a的值</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* p3= &amp;a;<span class="comment">//这里的const限制的是P3的指向，p3指向变量a，但是由于const的限制，不可以通过p3来改变a的值</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p4 = &amp;a;<span class="comment">//这里的两个const分被限制了p4和p4的指向，p4只能指向变量a，且不可以通过*p4改变a的值</span></span><br><span class="line">    <span class="type">int</span>* p5=&amp;b;<span class="comment">//p5是一个普通的指针，但是我们却让他指向了一个常变量，意味着我们可以通过*p5改变b的值，这是矛盾的，因此不能被编译编译通过</span></span><br><span class="line">    <span class="type">int</span>*<span class="type">const</span> p6=&amp;b;<span class="comment">//p6与p5的区别在于多加了一个const，但是此const只是限制了p6自身，让p6不能够再去指向别的变量，其本质还是和p5一样，可以通过*p6改变b的值，因此也不能编译通过</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* p7= &amp;b;<span class="comment">//此时的指针p7与变量b是同一类型的，所以可以编译通过</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p8 = &amp;b;<span class="comment">//与p7相比，p8又多加了一层限制，不仅使得无法通过*p8改变b的值，而且还不能改变p8自身，相对于p7来说属于是其指向能力收缩了，因此也是正确的，可以被编译通过</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>const在变量定义的时候限制了其的一些能力，放在不同的位置，起作用也不一样，总而言之，我们编译的标准是向着能力收缩的方向可以通过，向着能力扩展的方向发展，其编译是不被允许的。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220109170152714.png" alt="image-20220109170152714"></p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220109174432646.png" alt="image-20220109174432646"></p>
+<h3 id="2-总结const-与引用的关系"><a href="#2-总结const-与引用的关系" class="headerlink" title="2.总结const 与引用的关系"></a>2.总结const 与引用的关系</h3><p><strong>值得注意的是：</strong></p>
+<p>1.<strong>引用变量必须初始化，且之后永不改变，即只能引用一个实体</strong></p>
+<p>2.<strong>一个变量可以有多个引用</strong></p>
+<p>引用为对象起了另一个名字，引用类型引用另外一种类型。引用的本质其实和指针差不多，因为引用的底层就是指针，我们也可以将引用写成指针的形式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp;b=a;<span class="comment">//int* const b=&amp;a;</span></span><br></pre></td></tr></table></figure>
+
+<p>const和引用之间的关系，在定义引用时，可以用const进行限制，使它成为不允许被修改的常量引用。const引用可以用常量初始化，但非const引用不能用常量初始化。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> b=<span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>&amp; c=a;<span class="comment">//普通引用只能引用普通变量，且可以通过引用更改a的值</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; d =a;<span class="comment">//常应用也可以引用普通变量，但是不可以通过引用来改变变量的的值</span></span><br><span class="line"><span class="type">int</span>&amp; e=b;<span class="comment">//普通引用不可以引用常变量，因为我们可以通过引用来改变被引用的变量的值，但是常变量被普通引用引用，是自相矛盾的</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; k=b;<span class="comment">//常引用可以引用常变量，所以此类引用是正确的</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-总结this指针"><a href="#3-总结this指针" class="headerlink" title="3.总结this指针"></a>3.总结this指针</h3><p>首先，我们都知道类的成员函数可以访问类的数据（限定符只是限定于类外的一些操作，<strong>类内的一切对于成员函数来说都是透明的</strong>），<strong>那么成员函数如何知道哪个对象的数据成员要被操作呢，原因在于每个对象都拥有一个指针：this指针，通过this指针来访问自己的地址。</strong></p>
+<p><strong>注意：</strong></p>
+<p><strong>this指针并不是对象的一部分</strong>，this指针所占的内存大小是不会反应在sizeof操作符上的。<strong>this指针的类型取决于使用this指针的成员函数类型以及对象类型</strong>，</p>
+<h4 id="this指针的概念："><a href="#this指针的概念：" class="headerlink" title="this指针的概念："></a>this指针的概念：</h4><p><strong>1.定义</strong>：在 C++ 中，每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象。this指针的类型为类类型<em>const（类名 ）</em>const </p>
+<p><strong>2.this只能在成员函数中使用</strong>：成员函数默认第一个参数为T* const register this。<br>（友元函数，全局函数不是成员函数）</p>
+<p><strong>3.this指针不能在静态函数中使用</strong>：静态函数如同静态变量一样，他不属于具体的哪一个对象，静态函数表示了整个类范围意义上的信息，而this指针却实实在在的对应一个对象，所以this指针不能被静态函数使用。</p>
+<p><strong>4.this指针的创建：</strong>this指针在成员函数的开始执行前构造的，在成员的执行结束后清除。</p>
+<p><strong>5.this指针只有在成员函数中才有定义。</strong><br>创建一个对象后，不能通过对象使用this指针。也无法知道一个对象的this指针的位置（只有在成员函数里才有this指针的位置）。当然，在成员函数里，你是可以知道this指针的位置的（可以&amp;this获得)，也可以直接使用的。</p>
+<h4 id="this指针的操作："><a href="#this指针的操作：" class="headerlink" title="this指针的操作："></a>this指针的操作：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">public:</span><br><span class="line">	Student&amp; <span class="title function_">addScore</span><span class="params">(<span class="type">int</span> score)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student&amp; <span class="title function_">Student::addScore</span><span class="params">(<span class="type">int</span> score)</span>&#123;</span><br><span class="line">	this-&gt;score = this-&gt;score + score;</span><br><span class="line">	<span class="keyword">return</span> *this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>*<em>当你进入一个房子后，</em><br> <em>你可以看见桌子、椅子、地板等，</em><br> <em>但是房子你是看不到全貌了。</em><br> <em>对于一个类的实例来说，</em><br> <em>你可以看到它的成员函数、成员变量，</em><br> <em>但是实例本身呢？</em><br> <em>this是一个指针，</em><br> <em>它时时刻刻指向你这个实例本身。</em></p>
+<h3 id="4-设计矩形类。"><a href="#4-设计矩形类。" class="headerlink" title="4. 设计矩形类。"></a>4. 设计矩形类。</h3><p>  `&#96;&#96;cc<br>  left：指定矩形左上角的逻辑X坐标。（x,y）<br>  top：指定矩形左上角的逻辑Y坐标。（x,y）<br>  right：指定矩形右下角的逻辑X坐标。（x,y）<br>  bottom：指定矩形右下角的逻辑Y坐标。（x,y）<br>  class Rectangle<br>  {<br>  private:<br>  int left, top, right, bottom;<br>  public:<br>    &#x2F;&#x2F; 实现默认构造函数和带参的构造函数<br>    &#x2F;&#x2F; 实现Set函数<br>    SetLeft;<br>    SetTop;<br>    SetRight;<br>    SetBottom;<br>    &#x2F;&#x2F; 实现Get函数<br>    GetLeft;<br>    GetTop;<br>    GetRight;<br>    SetBottom;<br>    void Show() const<br>    {<br>      cout&lt;&lt;”left-top point is (“&lt;&lt;left&lt;&lt;”,”&lt;&lt;top&lt;&lt;:”)”&lt;&lt;endl;<br>      cout&lt;&lt;”right-bottom point is (“&lt;&lt;right&lt;&lt;”,”&lt;&lt;bottom&lt;&lt;”)”&lt;&lt;endl;<br>    }<br>  };<br>  `&#96;&#96;</p>
+<p>这不得先设计一个坐标结构体：coordinate</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Coordinate</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> abscissa;</span><br><span class="line">    <span class="type">int</span> ordinate;</span><br><span class="line">&#125;Coor;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span></span><br><span class="line"><span class="class"> &#123;</span></span><br><span class="line"> private:</span><br><span class="line">   <span class="type">int</span> left, top, right, bottom;</span><br><span class="line"> public:</span><br><span class="line">   <span class="comment">// 实现默认构造函数和带参的构造函数</span></span><br><span class="line">    Rectangle()&#123;</span><br><span class="line">        left=<span class="number">0</span>;</span><br><span class="line">        right=<span class="number">0</span>;</span><br><span class="line">        top=<span class="number">0</span>;</span><br><span class="line">        bottom=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Rectangle(<span class="type">int</span> left_x,<span class="type">int</span> top_y,<span class="type">int</span> right_x,<span class="type">int</span> bottom_y)</span><br><span class="line">    &#123;</span><br><span class="line">        left=left_x;</span><br><span class="line">        right=right_x;</span><br><span class="line">        top=top_y;</span><br><span class="line">        bottom=bottom_y;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">// 实现Set函数</span></span><br><span class="line">   <span class="type">void</span> <span class="title function_">SetLeft</span><span class="params">(<span class="type">int</span> left_x)</span></span><br><span class="line">   &#123;</span><br><span class="line">       left=left_x;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">void</span> <span class="title function_">SetTop</span><span class="params">(<span class="type">int</span> top_y)</span></span><br><span class="line">   &#123;</span><br><span class="line">       top=top_y;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">void</span> <span class="title function_">SetRight</span><span class="params">(<span class="type">int</span> right_x)</span></span><br><span class="line">   &#123;</span><br><span class="line">       right=right_x;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">void</span> <span class="title function_">SetBottom</span><span class="params">(<span class="type">int</span> bottom_y)</span></span><br><span class="line">   &#123;</span><br><span class="line">       bottom=bottom_y;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 实现Get函数</span></span><br><span class="line">   <span class="type">int</span> <span class="title function_">GetLeft</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">return</span> left;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">int</span> <span class="title function_">GetTop</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">return</span> top;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">int</span> <span class="title function_">GetRight</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">return</span> right;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">int</span> <span class="title function_">SetBottom</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">return</span> bottom;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="type">void</span> <span class="title function_">Show</span><span class="params">()</span> <span class="type">const</span> </span><br><span class="line">   &#123;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;left-top point is (&quot;</span>&lt;&lt;left&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;top&lt;&lt;:<span class="string">&quot;)&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;right-bottom point is (&quot;</span>&lt;&lt;right&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;bottom&lt;&lt;<span class="string">&quot;)&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-实现双向函数"><a href="#5-实现双向函数" class="headerlink" title="5.实现双向函数"></a>5.实现双向函数</h3>  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">private:</span><br><span class="line">  <span class="type">int</span> value;</span><br><span class="line">public:</span><br><span class="line">  Object(<span class="type">int</span> x = <span class="number">0</span>):value(x) &#123;&#125;</span><br><span class="line">  ~Object() &#123;&#125;</span><br><span class="line">  <span class="type">void</span> <span class="title function_">SetValue</span><span class="params">(<span class="type">int</span> x)</span> &#123; value = x;&#125;</span><br><span class="line">  <span class="type">int</span> <span class="title function_">GetValue</span><span class="params">()</span> &#123; <span class="keyword">return</span> value;&#125;</span><br><span class="line">  <span class="comment">// 使用一个函数实现 SetValue 和 GetValue() 函数的功能</span></span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Set_Getvalue</span><span class="params">(<span class="type">int</span> x)</span></span><br><span class="line">&#123;</span><br><span class="line">    value=x;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> &amp; <span class="title function_">value</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; <span class="title function_">value</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-实现Stack"><a href="#6-实现Stack" class="headerlink" title="6 .实现Stack"></a>6 .实现Stack</h3><p>  `&#96;&#96;cc<br>  #define SEQ_INIT_SIZE 10<br>  #define SEQ_INC_SIZE 2<br>  class SeqStack<br>  {<br>  private:<br>    int *base;<br>    int *pos;<br>    int maxsize;<br>  public:<br>    SeqStack(int sz &#x3D; SEQ_INIT_SIZE):maxsize(sz&gt;SEQ_INIT_SIZE? sz:SEQ_INIT_SIZE)<br>    {<br>      base &#x3D; pos &#x3D; (int;)malloc(sizeof(int)*maxsize);<br>      if(NULL &#x3D;&#x3D; base) exit(1);<br>    }<br>    &#x2F;&#x2F;实现函数有：<br>    ~SeqStack; &#x2F;&#x2F; 析构函数<br>    Get_Size; &#x2F;&#x2F; 返回数据的个数<br>    Get_Capacity; &#x2F;&#x2F; 返回容量<br>    Is_Empty; &#x2F;&#x2F; 判空<br>    Is_Full; &#x2F;&#x2F; 判满<br>    Push;   &#x2F;&#x2F; 入栈<br>    Pop;   &#x2F;&#x2F; 出栈<br>    Top;   &#x2F;&#x2F; 取栈顶数据 ，但不出栈<br>  };</p>
+<p>  `&#96;&#96;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SEQ_INIT_SIZE 10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SEQ_INC_SIZE 2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SeqStack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">private:</span><br><span class="line">  <span class="type">int</span> *base;</span><br><span class="line">  <span class="type">int</span> *pos;</span><br><span class="line">  <span class="type">int</span> maxsize;</span><br><span class="line">public:</span><br><span class="line">  SeqStack(<span class="type">int</span> sz = SEQ_INIT_SIZE):maxsize(sz&gt;SEQ_INIT_SIZE? sz:SEQ_INIT_SIZE)</span><br><span class="line">  &#123;</span><br><span class="line">    base = pos = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*maxsize);</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">NULL</span> == base) <span class="built_in">exit</span>(<span class="number">1</span>);    </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//实现函数有：</span></span><br><span class="line">    <span class="comment">//析构函数</span></span><br><span class="line">  ~SeqStack()</span><br><span class="line">  &#123;</span><br><span class="line">      pos=base;</span><br><span class="line">      <span class="built_in">free</span>(base);</span><br><span class="line">      base=pos=<span class="literal">NULL</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">//获取栈的有效长度</span></span><br><span class="line">  <span class="type">int</span> <span class="title function_">Get_Size</span><span class="params">()</span> <span class="type">const</span> </span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">return</span> pos-base;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">//扩容函数</span></span><br><span class="line">  <span class="type">void</span> <span class="title function_">Inc</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="type">int</span>* ptr=(<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*maxsize*SEQ_INC_SIZE);</span><br><span class="line">      <span class="keyword">if</span>(ptr==<span class="literal">NULL</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="built_in">printf</span>(<span class="string">&quot;Inc error\n&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="type">int</span>*tmp=base;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;maxsize;++i)</span><br><span class="line">      &#123;</span><br><span class="line">          ptr[i]=tmp[i];</span><br><span class="line">      &#125;</span><br><span class="line">      base=ptr;</span><br><span class="line">      maxsize *= SEQ_INC_SIZE;</span><br><span class="line">  &#125;</span><br><span class="line">     <span class="comment">// 返回容量</span></span><br><span class="line">  <span class="type">int</span> <span class="title function_">Get_Capacity</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">return</span> maxsize;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">// 判空</span></span><br><span class="line">  <span class="type">bool</span> <span class="title function_">Is_Empty</span><span class="params">()</span> <span class="type">const</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">return</span> base==pos;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">// 判满</span></span><br><span class="line">  <span class="type">bool</span> <span class="title function_">Is_Full</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">return</span> (pos-base)==maxsize;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">// 入栈</span></span><br><span class="line">  <span class="type">void</span> <span class="title function_">Push</span><span class="params">(<span class="type">int</span> value)</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">if</span>(Is_Full())</span><br><span class="line">      &#123;</span><br><span class="line">          Inc();</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      *pos=value;</span><br><span class="line">      pos++;</span><br><span class="line">  &#125;</span><br><span class="line">       <span class="comment">// 出栈</span></span><br><span class="line">  <span class="type">void</span> <span class="title function_">Pop</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">if</span>(Is_Empty())</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="built_in">printf</span>(<span class="string">&quot;栈空\n&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      pos--;</span><br><span class="line">  &#125;</span><br><span class="line">     <span class="comment">// 取栈顶数据 ，但不出栈</span></span><br><span class="line">  <span class="type">int</span> <span class="title function_">Top</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">return</span> *pos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-STL-string"><a href="#7-STL-string" class="headerlink" title="7.STL string"></a>7.STL string</h3><p>   预习 STL中的string　类型；　熟练掌握string类型中的方法。</p>
+<h4 id="7-1-STL简介"><a href="#7-1-STL简介" class="headerlink" title="7.1  STL简介"></a>7.1  STL简介</h4><pre><code>    STL(Standard Template Library,标准模板库)，是惠普实验室开发的一系列软件的统称。现在主要出现在 c++中，但是在引入 c++之前该技术已经存在很长时间了。
+</code></pre>
+<p>  <strong>STL 从广义上分为: 容器(container) 算法(algorithm) 迭代器(iterator),容器和算法之间通过迭代器进行无缝连接。</strong>STL 几乎所有的代码都采用了模板类或者模板函数，这相比传统的由函数和类组成的库来说提供了更好的代码重用机会。STL(Standard Template Library)标准模板库,在我们 c++标准程序库中隶属于 STL 的占到了 80%以上。</p>
+<h4 id="7-2-STL六大组件简介"><a href="#7-2-STL六大组件简介" class="headerlink" title="7.2  STL六大组件简介"></a>7.2  STL六大组件简介</h4><pre><code>STL提供了六大组件，彼此之间可以组合套用，这六大组件分别是:容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器。
+
+容器：各种数据结构，如vector、list、deque、set、map等,用来存放数据，从实现角度来看，STL容器是一种class
+template。
+
+算法：各种常用的算法，如sort、find、copy、for_each。从实现的角度来看，STL算法是一种function
+tempalte.
+
+迭代器：扮演了容器与算法之间的胶合剂，共有五种类型，从实现角度来看，迭代器是一种将operator* , operator-&gt; ,operator++,operator--等指针相关操作予以重载的class template.所有STL容器都附带有自己专属的迭代器，只有容器的设计者才知道如何遍历自己的元素。原生指针(native pointer)也是一种迭代器。
+
+仿函数：行为类似函数，可作为算法的某种策略。从实现角度来看，仿函数是一种重载了operator()的class 或者class
+template
+
+适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。
+
+空间配置器：负责空间的配置与管理。从实现角度看，配置器是一个实现了动态空间配置、空间管理、空间释放的class tempalte.
+</code></pre>
+<p>  STL六大组件的交互关系，容器通过空间配置器取得数据存储空间，算法通过迭代器存储容器中的内容，仿函数可以协助算法完成不同的策略的变化，适配器可以修饰仿函数。</p>
+<p>string 类虽然不是STL的组成部分，但设计他时，考虑到了STL。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> letters;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Enter the letter grouping (quit to quit):&quot;</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; letters &amp;&amp; letters != <span class="string">&quot;quit&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Permutations of:&quot;</span> &lt;&lt; letters &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        sort(letters.begin(), letters.end());<span class="comment">//排序算法</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; letters &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="comment">//next_permutation(letters.begin(), letters.end())算法将区间内的内容转换为下一种排列方式。对于字符串按照字母递增的的顺序进行。</span></span><br><span class="line">        <span class="keyword">while</span> (next_permutation(letters.begin(), letters.end()))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; letters &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Enter next sequence(quit to quit):&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Done.\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-3-string-的定义方式"><a href="#7-3-string-的定义方式" class="headerlink" title="7.3  string 的定义方式"></a>7.3  string 的定义方式</h4><p>string类实现了多个构造函数的重载，常用的构造函数如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">string(); //构造一个空字符串</span><br><span class="line"></span><br><span class="line">string(const char* s);  //复制s所指的字符序列</span><br><span class="line"></span><br><span class="line">string(const char* s, size_t n);  //复制s所指字符序列的前n个字符</span><br><span class="line"></span><br><span class="line">string(size_t n, char c);  //生成n个c字符的字符串</span><br><span class="line"></span><br><span class="line">string(const string&amp; str);  //生成str的复制品</span><br><span class="line"></span><br><span class="line">string(const string&amp; str, size_t pos, size_t len = npos);  //复制str中从字符位置pos开始并跨越len个字符的部分</span><br></pre></td></tr></table></figure>
+
+<p>使用实例：</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108165826114.png" alt="image-20220108165826114"></p>
+<h4 id="7-4-string的插入"><a href="#7-4-string的插入" class="headerlink" title="7.4  string的插入"></a>7.4  string的插入</h4><p>1、使用push_back进行尾插：</p>
+<pre><code>void push_back (char c);
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s;
+    s.push_back(&#39;C&#39;);
+    s.push_back(&#39;S&#39;);
+    s.push_back(&#39;D&#39;);
+    s.push_back(&#39;N&#39;);
+    cout &lt;&lt; s &lt;&lt; endl; //CSDN
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170231311.png" alt="image-20220108170231311"></p>
+<p>2、使用insert插入</p>
+<pre><code>string&amp; insert (size_t pos, const string&amp; str);
+string&amp; insert (size_t pos, const char* s);
+iterator insert (iterator p, char c);
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;C&quot;); //C
+    //insert(pos, str)在pos位置插入字符串str
+    s.insert(1, &quot;S&quot;); //CS
+
+    //insert(pos, string)在pos位置插入string对象
+    string t(&quot;D&quot;);
+    s.insert(2, t); //CSD
+
+    //insert(pos, char)在pos位置插入字符char
+    s.insert(s.end(), &#39;N&#39;); //CSDN
+
+    cout &lt;&lt; s &lt;&lt; endl; //CSDN
+    return 0;
+&#125;	
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170555066.png" alt="image-20220108170555066"></p>
+<h4 id="7-5-string的拼接"><a href="#7-5-string的拼接" class="headerlink" title="7.5  string的拼接"></a>7.5  string的拼接</h4><p>使用append函数完成string的拼接：</p>
+<pre><code>string&amp; append (const string&amp; str);
+string&amp; append (const char* s);
+string&amp; append (size_t n, char c);
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;I&quot;);
+    string s2(&quot; like&quot;);
+    //append(string)完成两个string对象的拼接
+    s1.append(s2); //I like
+
+    //append(str)完成string对象和字符串str的拼接
+    s1.append(&quot; C++&quot;); //I like C++
+
+    //append(n, char)将n个字符char拼接到string对象后面
+    s1.append(3, &#39;!&#39;); //I like C++!!!
+
+    cout &lt;&lt; s1 &lt;&lt; endl; //I like C++!!!
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108170919399.png" alt="image-20220108170919399"></p>
+<h4 id="7-6-string的删除"><a href="#7-6-string的删除" class="headerlink" title="7.6  string的删除"></a>7.6  string的删除</h4><p>1、使用pop_back进行尾删</p>
+<pre><code>void pop_back();
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;C++&quot;);
+    s.pop_back();
+    s.pop_back();
+    cout &lt;&lt; s &lt;&lt; endl; //C
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108171444536.png" alt="image-20220108171444536"></p>
+<p>2、使用erase删除</p>
+<pre><code>string&amp; erase (size_t pos = 0, size_t len = npos);
+iterator erase (iterator p);
+iterator erase (iterator first, iterator last);
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;I like C++!!!&quot;);
+    //erase(pos, n)删除pos位置开始的n个字符
+    s.erase(8, 5); //I like C
+
+    //erase(pos)删除pos位置的字符
+    s.erase(s.end()-1); //I like
+
+    //erase(pos1, pos2)删除[pos1pos2)上所有字符
+    s.erase(s.begin() + 1, s.end()); //I
+
+    cout &lt;&lt; s &lt;&lt; endl; //I
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108171807697.png" alt="image-20220108171807697"></p>
+<h4 id="7-7-string的查找"><a href="#7-7-string的查找" class="headerlink" title="7.7  string的查找"></a>7.7  string的查找</h4><p>1、使用find函数正向搜索第一个匹配项</p>
+<pre><code>size_t find (const string&amp; str, size_t pos = 0) const;
+size_t find (const char* s, size_t pos = 0) const;
+size_t find (char c, size_t pos = 0) const;
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;http://www.cplusplus.com/reference/string/string/find/&quot;);
+    //find(string)正向搜索与string对象所匹配的第一个位置
+    string s2(&quot;www&quot;);
+    size_t pos1 = s1.find(s2);
+    cout &lt;&lt; pos1 &lt;&lt; endl; //7
+
+    //find(str)正向搜索与字符串str所匹配的第一个位置
+    char str[] = &quot;cplusplus.com&quot;;
+    size_t pos2 = s1.find(str);
+    cout &lt;&lt; pos2 &lt;&lt; endl;  //11
+
+    //find(char)正向搜索与字符char所匹配的第一个位置
+    size_t pos3 = s1.find(&#39;:&#39;);
+    cout &lt;&lt; pos3 &lt;&lt; endl; //4
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172103339.png" alt="image-20220108172103339"></p>
+<p>2、使用rfind函数反向搜索第一个匹配项</p>
+<pre><code>size_t rfind (const string&amp; str, size_t pos = npos) const;
+size_t rfind (const char* s, size_t pos = npos) const;
+size_t rfind (char c, size_t pos = npos) const;
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;http://www.cplusplus.com/reference/string/string/find/&quot;);
+    //rfind(string)反向搜索与string对象所匹配的第一个位置
+    string s2(&quot;string&quot;);
+    size_t pos1 = s1.rfind(s2);
+    cout &lt;&lt; pos1 &lt;&lt; endl; //42
+
+    //rfind(str)反向搜索与字符串str所匹配的第一个位置
+    char str[] = &quot;reference&quot;;
+    size_t pos2 = s1.rfind(str);
+    cout &lt;&lt; pos2 &lt;&lt; endl;  //25
+
+    //rfind(char)反向搜索与字符char所匹配的第一个位置
+    size_t pos3 = s1.rfind(&#39;/&#39;);
+    cout &lt;&lt; pos3 &lt;&lt; endl; //53
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172407250.png" alt="image-20220108172407250"></p>
+<h4 id="7-8-string的比较"><a href="#7-8-string的比较" class="headerlink" title="7.8  string的比较"></a>7.8  string的比较</h4><p>使用compare函数完成比较：</p>
+<pre><code>int compare (const string&amp; str) const;
+int compare (size_t pos, size_t len, const string&amp; str) const;
+int compare (size_t pos, size_t len, const string&amp; str, size_t subpos, size_t sublen) const;
+</code></pre>
+<p>比较规则：<br> 1、比较字符串中第一个不匹配的字符值较小，或者所有比较字符都匹配，但比较字符串较短，则返回小于0的值。<br> 2、比较字符串中第一个不匹配的字符值较大，或者所有比较字符都匹配，但比较字符串较长，则返回大于0的值。<br> 3、比较的两个字符串相等，则返回0。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;hello world&quot;);
+    string s2(&quot;hello CSDN&quot;);
+    //&quot;hello world&quot;和&quot;hello CSDN&quot;比较
+    cout &lt;&lt; s1.compare(s2) &lt;&lt; endl; //1
+
+    //&quot;ell&quot;和&quot;hello CSDN&quot;比较
+    cout &lt;&lt; s1.compare(1, 3, s2) &lt;&lt; endl; //-1
+
+    //&quot;hello&quot;和&quot;hello&quot;比较
+    cout &lt;&lt; s1.compare(0, 4, s2, 0, 4) &lt;&lt; endl; //0
+
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108172736662.png" alt="image-20220108172736662"></p>
+<h4 id="7-9-string的替换"><a href="#7-9-string的替换" class="headerlink" title="7.9  string的替换"></a>7.9  string的替换</h4><p>使用replace函数完成string的替换：</p>
+<pre><code>string&amp; replace (size_t pos, size_t len, const char* s);
+string&amp; replace (size_t pos, size_t len, size_t n, char c);
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;hello world&quot;);
+    //replace(pos, len, str)将pos位置开始的len个字符替换为字符串str
+    s.replace(6, 4, &quot;CSDN&quot;); //hello CSDNd
+
+    //replace(pos, len, n, char)将pos位置开始的len个字符替换为n个字符char
+    s.replace(10, 1, 3, &#39;!&#39;); //hello CSDN!!!
+
+    cout &lt;&lt; s &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173543066.png" alt="image-20220108173543066"></p>
+<h4 id="7-10-string的交换"><a href="#7-10-string的交换" class="headerlink" title="7.10  string的交换"></a>7.10  string的交换</h4><p>使用swap函数完成两个string类的交换：</p>
+<pre><code>void swap (string&amp; x, string&amp; y);
+void swap (string&amp; str);
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;hello&quot;);
+    string s2(&quot;CSDN&quot;);
+    //使用string类的成员函数swap交换s1和s2
+    s1.swap(s2);
+    cout &lt;&lt; s1 &lt;&lt; endl; //CSDN
+    cout &lt;&lt; s2 &lt;&lt; endl; //hello
+
+    //使用非成员函数swap交换s1和s2
+    swap(s1, s2);
+    cout &lt;&lt; s1 &lt;&lt; endl; //hello
+    cout &lt;&lt; s2 &lt;&lt; endl; //CSDN
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173719692.png" alt="image-20220108173719692"></p>
+<h4 id="7-11-string的大小和容量"><a href="#7-11-string的大小和容量" class="headerlink" title="7.11  string的大小和容量"></a>7.11  string的大小和容量</h4><p>1、使用size函数或length函数获取当前有效字符的个数</p>
+<pre><code>size_t size() const;
+size_t length() const;
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    cout &lt;&lt; s.size() &lt;&lt; endl; //4
+    cout &lt;&lt; s.length() &lt;&lt; endl; //4
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173822705.png" alt="image-20220108173822705"></p>
+<p>2、使用max_size函数获取string对象最多可包含的字符数</p>
+<pre><code>size_t max_size() const;
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string s(&quot;CSDN&quot;);</span><br><span class="line">	cout &lt;&lt; s.max_size() &lt;&lt; endl; //4294967294</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108173952943.png" alt="image-20220108173952943"></p>
+<p>3、使用capacity函数获取当前对象所分配的存储空间的大小</p>
+<pre><code>size_t capacity() const;
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    cout &lt;&lt; s.capacity() &lt;&lt; endl; //15
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174122580.png" alt="image-20220108174122580"></p>
+<p>4、使用resize改变当前对象的有效字符的个数</p>
+<pre><code>void resize (size_t n);
+void resize (size_t n, char c);
+</code></pre>
+<p>resize规则：<br> 1、当n大于对象当前的size时，将size扩大到n，扩大的字符为c，若c未给出，则默认为’\0’。<br> 2、当n小于对象当前的size时，将size缩小到n。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;CSDN&quot;);
+    //resize(n)n大于对象当前的size时，将size扩大到n，扩大的字符默认为&#39;\0&#39;
+    s1.resize(20);
+    cout &lt;&lt; s1 &lt;&lt; endl; //CSDN
+    cout &lt;&lt; s1.size() &lt;&lt; endl; //20
+    cout &lt;&lt; s1.capacity() &lt;&lt; endl; //31
+    string s2(&quot;CSDN&quot;);
+    //resize(n, char)n大于对象当前的size时，将size扩大到n，扩大的字符为char
+    s2.resize(20, &#39;x&#39;);
+    cout &lt;&lt; s2 &lt;&lt; endl; //CSDNxxxxxxxxxxxxxxxx
+    cout &lt;&lt; s2.size() &lt;&lt; endl; //20
+    cout &lt;&lt; s2.capacity() &lt;&lt; endl; //31
+
+    string s3(&quot;CSDN&quot;);
+    //resize(n)n小于对象当前的size时，将size缩小到n
+    s3.resize(2);
+    cout &lt;&lt; s3 &lt;&lt; endl; //CS
+    cout &lt;&lt; s3.size() &lt;&lt; endl; //2
+    cout &lt;&lt; s3.capacity() &lt;&lt; endl; //15
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174320244.png" alt="image-20220108174320244"></p>
+<p>注意：若给出的n大于对象当前的capacity，则capacity也会根据自己的增长规则进行扩大。</p>
+<p>5、使用reserve改变当前对象的容量大小</p>
+<pre><code>void reserve (size_t n = 0);
+</code></pre>
+<p>reserve规则：<br> 1、当n大于对象当前的capacity时，将capacity扩大到n或大于n。<br> 2、当n小于对象当前的capacity时，什么也不做。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    cout &lt;&lt; s &lt;&lt; endl; //CSDN
+    cout &lt;&lt; s.size() &lt;&lt; endl; //4
+    cout &lt;&lt; s.capacity() &lt;&lt; endl; //15
+    reverse(n)当n大于对象当前的capacity时，将当前对象的capacity扩大为n或大于n
+    s.reserve(20); 
+    cout &lt;&lt; s &lt;&lt; endl; //CDSN
+    cout &lt;&lt; s.size() &lt;&lt; endl; //4
+    cout &lt;&lt; s.capacity() &lt;&lt; endl; //31
+
+    //reverse(n)当n小于对象当前的capacity时，什么也不做
+    s.reserve(2);
+    cout &lt;&lt; s &lt;&lt; endl; //CDSN
+    cout &lt;&lt; s.size() &lt;&lt; endl; //4
+    cout &lt;&lt; s.capacity() &lt;&lt; endl; //31
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174609470.png" alt="image-20220108174609470"></p>
+<p>注意：此函数对字符串的size没有影响，并且无法更改其内容。</p>
+<p>6、使用clear删除对象的内容，删除后对象变为空字符串</p>
+<pre><code>void clear();
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    //clear()删除对象的内容，该对象将变为空字符串
+    s.clear();
+    cout &lt;&lt; s &lt;&lt; endl; //空字符串
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174727461.png" alt="image-20220108174727461"></p>
+<p>7、使用empty判断对象是否为空</p>
+<pre><code>bool empty() const;
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    cout &lt;&lt; s.empty() &lt;&lt; endl; //0
+    //clear()删除对象的内容，该对象将变为空字符串
+    s.clear();
+    cout &lt;&lt; s.empty() &lt;&lt; endl; //1
+    return 0;
+&#125;
+</code></pre>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20220108174845231.png" alt="image-20220108174845231"></p>
+<h4 id="7-12-string中元素的访问"><a href="#7-12-string中元素的访问" class="headerlink" title="7.12  string中元素的访问"></a>7.12  string中元素的访问</h4><p>1、[ ]+下标<br> 因为string类对[ ]运算符进行了重载，所以我们可以直接使用[ ]+下标访问对象中的元素。并且该重载使用的是引用返回，所以我们可以通过[ ]+下标修改对应位置的元素。</p>
+<pre><code>char&amp; operator[] (size_t pos);
+const char&amp; operator[] (size_t pos) const;
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    //[]+下标访问对象元素
+    for (size_t i = 0; i &lt; s.size(); i++)
+    &#123;
+        cout &lt;&lt; s[i];
+    &#125;
+    cout &lt;&lt; endl;
+    //[]+下标修改对象元素内容
+    for (size_t i = 0; i &lt; s.size(); i++)
+    &#123;
+        s[i] = &#39;x&#39;;
+    &#125;
+    cout &lt;&lt; s &lt;&lt; endl; //xxxx
+    return 0;
+&#125;
+</code></pre>
+<p>2、使用at访问对象中的元素<br> 因为at函数也是使用的引用返回，所以我们也可以通过at函数修改对应位置的元素。</p>
+<pre><code>char&amp; at (size_t pos);
+const char&amp; at (size_t pos) const;
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    for (size_t i = 0; i &lt; s.size(); i++)
+    &#123;
+        //at(pos)访问pos位置的元素
+        cout &lt;&lt; s.at(i);
+    &#125;
+    cout &lt;&lt; endl;
+    for (size_t i = 0; i &lt; s.size(); i++)
+    &#123;
+        //at(pos)访问pos位置的元素，并对其进行修改
+        s.at(i) = &#39;x&#39;;
+    &#125;
+    cout &lt;&lt; s &lt;&lt; endl; //xxxx
+    return 0;
+&#125;
+</code></pre>
+<p>3、使用范围for访问对象中的元素<br> 需要特别注意的是：若是需要通过范围for修改对象的元素，则用于接收元素的变量e的类型必须是引用类型，否则e只是对象元素的拷贝，对e的修改不会影响到对象的元素。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    //使用范围for访问对象元素
+    for (auto e : s)
+    &#123;
+        cout &lt;&lt; e;
+    &#125;
+    cout &lt;&lt; endl; //CSDN
+    //使用范围for访问对象元素，并对其进行修改
+    for (auto&amp; e : s) //需要修改对象的元素，e必须是引用类型
+    &#123;
+        e = &#39;x&#39;;
+    &#125;
+    cout &lt;&lt; s &lt;&lt; endl; //xxxx
+    return 0;
+&#125;    
+</code></pre>
+<p>4、使用迭代器访问对象中的元素</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;CSDN&quot;);
+    //使用迭代器访问对象元素
+    string::iterator it1 = s.begin();
+    while (it1 != s.end())
+    &#123;
+        cout &lt;&lt; *it1;
+        it1++;
+    &#125;
+    cout &lt;&lt; endl; //CSDN
+
+    //使用迭代器访问对象元素，并对其进行修改
+    string::iterator it2 = s.begin();
+    while (it2 != s.end())
+    &#123;
+        *it2 += 1;
+        it2++;
+    &#125;
+    cout &lt;&lt; s &lt;&lt; endl; //DTEO
+    return 0;
+&#125;
+</code></pre>
+<h4 id="7-13-string中运算符的使用"><a href="#7-13-string中运算符的使用" class="headerlink" title="7.13  string中运算符的使用"></a>7.13  string中运算符的使用</h4><p>1、operator&#x3D;<br> string类中对&#x3D;运算符进行了重载，重载后的&#x3D;运算符支持string类的赋值、字符串的赋值以及字符的赋值。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1;
+    string s2(&quot;CSDN&quot;);
+    //支持string类的赋值
+    s1 = s2;
+    cout &lt;&lt; s1 &lt;&lt; endl; //CSDN
+
+    //支持字符串的赋值
+    s1 = &quot;hello&quot;;
+    cout &lt;&lt; s1 &lt;&lt; endl;  //hello
+
+    //支持字符的赋值
+    s1 = &#39;x&#39;;
+    cout &lt;&lt; s1 &lt;&lt; endl; //x
+    return 0;
+&#125;
+</code></pre>
+<p>2、operator+&#x3D;<br> string类中对+&#x3D;运算符进行了重载，重载后的+&#x3D;运算符支持string类的复合赋值、字符串的复合赋值以及字符复合的赋值。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1;
+    string s2(&quot;hello&quot;);
+    //支持string类的复合赋值
+    s1 += s2;
+    cout &lt;&lt; s1 &lt;&lt; endl; //hello
+
+    //支持字符串的复合赋值
+    s1 += &quot; CSDN&quot;;
+    cout &lt;&lt; s1 &lt;&lt; endl; //hello CSDN
+
+    //支持字符的复合赋值
+    s1 += &#39;!&#39;;
+    cout &lt;&lt; s1 &lt;&lt; endl; //hello CSDN!
+    return 0;
+&#125;
+</code></pre>
+<p>3、operator+<br> string类中对+运算符进行了重载，重载后的+运算符支持以下几种类型的操作：<br> string类 + string类<br> string类 + 字符串<br> 字符串 + string类<br> string类 + 字符<br> 字符 + string类<br>它们相加后均返回一个string类对象。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s;
+    string s1(&quot;super&quot;);
+    string s2(&quot;man&quot;);
+    char str[] = &quot;woman&quot;;
+    char ch = &#39;!&#39;;
+    //string类 + string类
+    s = s1 + s2;
+    cout &lt;&lt; s &lt;&lt; endl; //superman
+
+    //string类 + 字符串
+    s = s1 + str;
+    cout &lt;&lt; s &lt;&lt; endl; //superwoman
+
+    //字符串 + string类
+    s = str + s1;
+    cout &lt;&lt; s &lt;&lt; endl; //womansuper
+
+    //string类 + 字符
+    s = s1 + ch;
+    cout &lt;&lt; s &lt;&lt; endl; //super!
+
+    //字符 + string类
+    s = ch + s1;
+    cout &lt;&lt; s &lt;&lt; endl; //!super
+    return 0;
+&#125;
+</code></pre>
+<p>4、operator&gt;&gt; 和 operator&lt;&lt;<br> string类中也对&gt;&gt;和&lt;&lt;运算符进行了重载，这就是为什么我们可以直接使用&gt;&gt;和&lt;&lt;对string类进行输入和输出的原因。</p>
+<pre><code>istream&amp; operator&gt;&gt; (istream&amp; is, string&amp; str);
+ostream&amp; operator&lt;&lt; (ostream&amp; os, const string&amp; str);
+</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s; <span class="comment">//输入</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5、relational operators<br> string类中还对一系列关系运算符进行了重载，它们分别是&#x3D;&#x3D;、!&#x3D;、&lt;、&lt;&#x3D;、&gt;、&gt;&#x3D;。重载后的关系运算符支持string类和string类之间的关系比较、string类和字符串之间的关系比较、字符串和string类之间的关系比较。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;abcd&quot;);
+    string s2(&quot;abde&quot;);
+    cout &lt;&lt; (s1 &gt; s2) &lt;&lt; endl; //0
+    cout &lt;&lt; (s1 &lt; s2) &lt;&lt; endl; //1
+    cout &lt;&lt; (s1 == s2) &lt;&lt; endl; //0
+    return 0;
+&#125;
+</code></pre>
+<p>注意：这些重载的关系比较运算符所比较的都是对应字符的ASCII码值。</p>
+<h4 id="7-14-string中与迭代器相关的函数"><a href="#7-14-string中与迭代器相关的函数" class="headerlink" title="7.14  string中与迭代器相关的函数"></a>7.14  string中与迭代器相关的函数</h4><p>1、与正向迭代器相关的函数<br>begin函数：返回一个指向字符串第一个字符的迭代器。</p>
+<pre><code>函数原型：
+    iterator begin();
+ const_iterator begin() const;
+</code></pre>
+<p>end函数：返回一个指向字符串结束字符的迭代器，即’\0’。</p>
+<pre><code>函数原型：
+    iterator end();
+ const_iterator end() const;
+</code></pre>
+<p>使用示例：</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;hello string&quot;);
+//正向迭代器
+string::iterator it = s.begin();
+while (it != s.end())
+&#123;
+    cout &lt;&lt; *it;
+    it++;
+&#125;
+cout &lt;&lt; endl; //hello string
+
+return 0;
+&#125;
+</code></pre>
+<p>2、与反向迭代器相关的函数<br>rbegin函数：返回指向字符串最后一个字符的反向迭代器。</p>
+<pre><code>函数原型：
+    reverse_iterator rbegin();
+ const_reverse_iterator rbegin() const;
+</code></pre>
+<p>rend函数：返回指向字符串第一个字符前面的理论元素的反向迭代器。</p>
+<pre><code>函数原型：
+    reverse_iterator rend();
+ const_reverse_iterator rend() const;
+</code></pre>
+<p>使用示例：</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;hello string&quot;);
+//反向迭代器
+string::reverse_iterator rit = s.rbegin();
+while (rit != s.rend())
+&#123;
+    cout &lt;&lt; *rit;
+    rit++;
+&#125;
+cout &lt;&lt; endl; //gnirts olleh
+
+return 0;
+&#125;
+</code></pre>
+<p>7.15  string与字符串之间的转换</p>
+<p>1、将字符串转换为string<br> 将字符串转换为string很简单，在前面讲string的定义方式时就有说到。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    //方式一
+    string s1(&quot;hello world&quot;);
+//方式二
+char str[] = &quot;hello world&quot;;
+string s2(str);
+
+cout &lt;&lt; s1 &lt;&lt; endl; //hello world
+cout &lt;&lt; s2 &lt;&lt; endl; //hello world
+return 0;
+&#125;
+</code></pre>
+<p>2、使用c_str或data将string转换为字符串</p>
+<pre><code>const char* c_str() const;
+const char* data() const;
+</code></pre>
+<p>区别：</p>
+<pre><code>在C++98中，c_str()返回 const char* 类型，返回的字符串会以空字符结尾。
+在C++98中，data()返回 const char* 类型，返回的字符串不以空字符结尾。
+但是在C++11版本中，c_str()与data()用法相同。
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;hello world &quot;);
+    const char* str1 = s.data();
+    const char* str2 = s.c_str();
+    cout &lt;&lt; str1 &lt;&lt; endl;
+    cout &lt;&lt; str2 &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h4 id="7-16-string中子字符串的提取"><a href="#7-16-string中子字符串的提取" class="headerlink" title="7.16  string中子字符串的提取"></a>7.16  string中子字符串的提取</h4><p>1、使用substr函数提取string中的子字符串</p>
+<pre><code>string substr (size_t pos = 0, size_t len = npos) const;
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s1(&quot;abcdef&quot;);
+    string s2;
+//substr(pos, n)提取pos位置开始的n个字符序列作为返回值
+s2 = s1.substr(2, 4);
+cout &lt;&lt; s2 &lt;&lt; endl; //cdef
+return 0;
+&#125;
+</code></pre>
+<p>2、使用copy函数将string的子字符串复制到字符数组中</p>
+<pre><code>size_t copy (char* s, size_t len, size_t pos = 0) const;
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s(&quot;abcdef&quot;);
+    char str[20];
+//copy(str, n, pos)复制pos位置开始的n个字符到str字符串
+size_t length = s.copy(str, 4, 2);
+//copy函数不会在复制内容的末尾附加&#39;\0&#39;，需要手动加
+str[length] = &#39;\0&#39;;
+cout &lt;&lt; str &lt;&lt; endl; //dcef
+return 0;
+&#125;
+</code></pre>
+<h4 id="7-17-string中的getline函数"><a href="#7-17-string中的getline函数" class="headerlink" title="7.17  string中的getline函数"></a>7.17  string中的getline函数</h4><p> 我们知道，使用&gt;&gt;进行输入操作时，当&gt;&gt;读取到空格便会停止读取，基于此，我们将不能用&gt;&gt;将一串含有空格的字符串读入到string对象中。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s;
+    cin &gt;&gt; s; //输入：hello CSDN
+    cout &lt;&lt; s &lt;&lt; endl; //输出：hello
+    return 0;
+&#125;
+</code></pre>
+<p> 这时，我们就需要用getline函数完成一串含有空格的字符串的读取操作了。</p>
+<p>用法一：</p>
+<pre><code>istream&amp; getline (istream&amp; is, string&amp; str);
+</code></pre>
+<p> getline函数将从is中提取到的字符存储到str中，直到读取到换行符’\n’为止。</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    string s;
+    getline(cin, s); //输入：hello CSDN
+    cout &lt;&lt; s &lt;&lt; endl; //输出：hello CSDN
+    return 0;
+&#125;
+</code></pre>
+<p>用法二：</p>
+<pre><code>istream&amp; getline (istream&amp; is, string&amp; str, char delim);
+</code></pre>
+<p> getline函数将从is中提取到的字符存储到str中，直到读取到分隔符delim或换行符’\n’为止。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	getline(<span class="built_in">cin</span>, s, <span class="string">&#x27;D&#x27;</span>); <span class="comment">//输入：hello CSDN</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出：hello CS</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdnimg.cn/20210614192437496.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW5sb25nX2N4eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="img"> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/C%EF%BC%8B%EF%BC%8B%E3%80%80%E4%BD%9C%E4%B8%9A/" data-id="cllwbvs7f0005d4mo05p82jv7" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/C++primerPlus%E9%98%85%E8%AF%BB%E5%BF%83%E5%BE%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/C++%20Vector%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

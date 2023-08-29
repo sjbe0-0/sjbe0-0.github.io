@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="基本数据类型 数值类型 1234整型：int short long longlong字节数：4   2     4      8浮点型：float  double字节数： 4  		8  int 和 long int的区别？1二者的区别主要体现在不同的编译方式上，在不同的操作系统中表现出的位数不同，在早期的16位的系统上，int是2字节，long是4字节；后来发展到32位的系统，int和long相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/29/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本数据类型 数值类型 1234整型：int short long longlong字节数：4   2     4      8浮点型：float  double字节数： 4  		8  int 和 long int的区别？1二者的区别主要体现在不同的编译方式上，在不同的操作系统中表现出的位数不同，在早期的16位的系统上，int是2字节，long是4字节；后来发展到32位的系统，int和long相">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-29T13:11:36.355Z">
+<meta property="article:modified_time" content="2022-10-18T03:24:38.954Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C语言小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T13:11:36.355Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
+<li><p>数值类型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">整型：<span class="type">int</span> <span class="type">short</span> <span class="type">long</span> longlong</span><br><span class="line">字节数：<span class="number">4</span>   <span class="number">2</span>     <span class="number">4</span>      <span class="number">8</span></span><br><span class="line">浮点型：<span class="type">float</span>  <span class="type">double</span></span><br><span class="line">字节数： <span class="number">4</span>  		<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="int-和-long-int的区别？"><a href="#int-和-long-int的区别？" class="headerlink" title="int 和 long int的区别？"></a>int 和 long int的区别？</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二者的区别主要体现在不同的编译方式上，在不同的操作系统中表现出的位数不同，在早期的16位的系统上，int是2字节，long是4字节；后来发展到32位的系统，int和long相同，都是4字节；随着系统的发展现在到了64位的操作系统，int是4字节，long是八字节  </span><br></pre></td></tr></table></figure>
+
+<h6 id="关于longlong"><a href="#关于longlong" class="headerlink" title="关于longlong"></a>关于longlong</h6><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">关于long long</span><br><span class="line"></span><br><span class="line">（1）long long在win32中是确实存在，长度为8个字节；定义为LONG64。</span><br><span class="line">为什么会出现long int呢，在win32现在系统中，长度为4；在历史上，或者其他某些系统中，int长度为2，是short int。</span><br><span class="line">即便是long long，在TI的有款平台中，长度为5</span><br><span class="line">也就是说，每种类型长度，需要sizeof才知道，如果可能，最好用union看看里面的数据，可以消除一些类型的假象长度。  </span><br><span class="line"></span><br><span class="line">（2）visual c++ 6.0中不支持，long long int，是在vc99中添加此功能的，所以我们在vc6.0中编译有long long 的数据时，会出错，但是在VS更高的版本中，是能通过的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>字符类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char 大小为1字节</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指针类型：不管什么指针，大小都是<strong>4字节</strong></p>
+</li>
+<li><p>空类型：声明函数无返回值或者没有参数。声明空类型指针</p>
+</li>
+<li><p>自定义类型</p>
+<ol>
+<li><p>结构体</p>
+<h5 id="结构体对齐方式："><a href="#结构体对齐方式：" class="headerlink" title="结构体对齐方式："></a>结构体对齐方式：</h5><ul>
+<li>结构体第一个成员必须放到0偏移处</li>
+<li>结构体成员的偏移量为自身的整数倍</li>
+<li>结构体的大小只能是自身最大成员变量大小的整数倍</li>
+</ul>
+<h5 id="空结构体的大小为1"><a href="#空结构体的大小为1" class="headerlink" title="空结构体的大小为1"></a>空结构体的大小为1</h5><h5 id="柔性数组"><a href="#柔性数组" class="headerlink" title="柔性数组"></a>柔性数组</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">     </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>共用体</p>
+<p>所有成员公用一块内存，共用体所占内存的长度时最长成员的字节长度，有效提高了内存的利用效率。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">union 共用体名</span><br><span class="line">&#123;</span><br><span class="line">成员列表；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>枚举</p>
+<p>【1】. 枚举类型如果没有初始化，默认第一个成员从0开始</p>
+<p>【2】.枚举与宏的区别：</p>
+<ul>
+<li>宏是在与编译阶段进行的文本替换，而枚举是在编译阶段进行的处理，宏不能调试，枚举可以进行调试。</li>
+<li>宏定义需要一条一条的进行定义，而枚举只需要定义一次就可以了。</li>
+<li>宏作为指令存储在代码段；枚举作为常量存储在数据段；</li>
+<li>枚举是将一类型的信息集合在一起，而宏相对比较分散一点</li>
+<li>枚举中的每一项元素都是常量，是不可以赋值和更改的，但是我们可以在声明这个枚举的时候给个初始值。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="main函数的参数"><a href="#main函数的参数" class="headerlink" title="main函数的参数"></a>main函数的参数</h3><ul>
+<li>第一个参数是int argc,代表包含文件名在内的命令行参数的个数；</li>
+<li>第二个参数char *argv[]，是一个指针数组，里面包含文件名在内的命令行参数的首地址，数组的最后以NULL结尾。</li>
+<li>第三个参数char * envp[],表示环境变量。</li>
+</ul>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><ul>
+<li>二级指针存放的是一级指针的地址</li>
+<li>对二级指针进行一次“*”引用。就可以访问一级指针，对其进行“**”引用就可以访问一级指针所指向的空间。</li>
+</ul>
+<h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><ul>
+<li>定义：函数指针还是一个指针，只不过是指向一个函数的指针，在使用之前必须进行初始化，使他指向某个函数。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* (*p)(<span class="type">char</span>*);<span class="comment">//p是一个函数指针，所指向的函数类型是返回值为char* ，有一个char*型参数的函数</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>函数指针数组：是一个存放函数指针的数组。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> （*（*p)[<span class="number">3</span>])(<span class="type">int</span>);<span class="comment">//p是一个具有三个元素的函数指针数组，p里面存放的函数指针所指向的函数类型是返回值为int参数为空的函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数指针最常见的两个用途：转换表和回调函数。回调函数是将函数指针作为参数传递给另一个函数。</p>
+</li>
+</ul>
+<h3 id="指针数组与数组指针"><a href="#指针数组与数组指针" class="headerlink" title="指针数组与数组指针"></a>指针数组与数组指针</h3><h4 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h4><p>指针数组是一个数组，只不过数组里面存放的都是指针</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int *p[];//因为[]比*优先级高，所以指针数组一定是不加（）的，让变量名先与[]结合</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h4><p>数组指针是一个指针，只不过它指向的的是一个数组，所以当指针加一是，他跳过的是整个数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int（*P)[3];//[]比*的优先级要高，所以要先加（）让*与变量名先进行结合</span><br></pre></td></tr></table></figure>
+
+<h3 id="指针和数组之间的恩怨"><a href="#指针和数组之间的恩怨" class="headerlink" title="指针和数组之间的恩怨"></a>指针和数组之间的恩怨</h3><ol>
+<li><strong>下标与*访问方式</strong>：数组有两种访问方式，一种是下标访问，一种是*访问，下标访问最终还是先被转化成   *访问的形式再进行访问的。</li>
+<li><strong>数组参数和指针参数</strong>：当一位数组或者一级指针作为实参时，形参可以声明为数组形式，也可以声明成指针形式。这是因为一维数组做事餐时传递过去的是首元素地址，所以才可以用指针的形式接受，但一定要明白数组和指针之间是没有关系的，完全是两个概念。</li>
+<li><strong>二维数组参数和二级指针参数</strong>：二维数组参数与数组指针参数是等效的；二级指针参数与指针数组参数是等效的。</li>
+</ol>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><h4 id="内存分配函数"><a href="#内存分配函数" class="headerlink" title="内存分配函数"></a>内存分配函数</h4><ol>
+<li><p>malloc和calloc</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span>* <span class="built_in">malloc</span>（要开辟的字节数）;</span><br><span class="line"><span class="type">void</span>* <span class="title function_">calloc</span><span class="params">(元素个数，每个元素的字节数)</span>；</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这两个函数如果开辟失败会返回一个空指针，所以要对他们的返回值进行判空操作；他们返回的是空类型，所以要强制类型转换之后才能使用。calloc会将开辟空间默认初始化为0.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>realloc</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">realloc</span><span class="params">(原先已经分配的地址，重新要分配的字节数)</span>；</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">realloc用来修改原先已经分配大小的内存块。注意：realloc失败后也会返回空，所以要对返回值进行判断。realloc返回的地址有可能不是原来的地址，所以要接受他返回的值，最后不要忘了free。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用完动态内存后要free，不然会发生内存泄漏，且一块空间不能释放两次，也不能释放不属于你的空间，但是可以释放一块指向NULL的指针。free完成后要手动将指向这快递至的指针赋空。</p>
+</li>
+<li><p>使用动态内存可以模拟出二维数组的开辟。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> (*p)[<span class="number">4</span>] =(<span class="type">int</span> [<span class="number">3</span>])<span class="built_in">malloc</span>(<span class="number">3</span>*<span class="number">4</span>*<span class="keyword">sizeof</span>(<span class="type">int</span>));<span class="comment">//这样就开辟了一个三行四列的二维数组。</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="进程的地址空间"><a href="#进程的地址空间" class="headerlink" title="进程的地址空间"></a>进程的地址空间</h4><ol>
+<li>栈：存放局部变量和用于函数的调用</li>
+<li>堆：动态内存在堆上申请，注意堆需要人工管理</li>
+<li>数据段：数据段分为data段和bss段。data段用来存放初始化的全局变量或者静态变量。bss段用来存放未初始化的全局或者静态变量</li>
+<li>文本段：将可执行转换的机器语言存放到文本段</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%BB%93/" data-id="cllwbvs7i0006d4mo29ze8sgc" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/29/git%E5%88%86%E5%B8%83%E5%BC%8F%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/29/C++%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/29/%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E6%97%A9%E6%9C%9F%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%A5%E7%AE%A1%E7%90%86%E5%92%8C%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E9%9A%8F%E7%9D%80%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B5%B7%EF%BC%8C%E5%A4%A7%E5%AE%B6%E6%83%B3%E8%A6%81%E9%80%9A%E8%BF%87%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9D%A5%E6%89%BE%E5%88%B0%E6%95%B0%E6%8D%AE%E4%B9%8B%E9%97%B4%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E4%BB%A5%E5%A4%A7%E5%AE%B6%E8%AE%BE%E8%AE%A1%E4%BA%86%E4%B8%80%E5%A5%97%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%A8%E9%83%A8%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%8C%E7%84%B6%E5%90%8E%E7%BB%9F%E4%B8%80%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%8F%AB%E5%81%9A%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E3%80%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%BC%95%E7%94%A8%E3%80%81%E6%8C%87%E9%92%88%E5%92%8Cconst%E7%9A%84%E5%85%B3%E7%B3%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/29/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
